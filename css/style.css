@@ -1,0 +1,252 @@
+@import url("https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Poppins:wght@500;600&display=swap");
+@import url(../css/queries.css);
+
+:root {
+  /* ====== COLORS ====== */
+  --Grey: hsl(228, 15%, 50%);
+  --GreyLight: hsl(228, 12%, 75%);
+  --Dark: hsl(228, 16%, 12%);
+  --White: #ffffff;
+  --Black: #000000;
+
+  /* ====== FONT ====== */
+  --Lato: "Lato", sans-serif;
+  --Poppins: "Poppins", sans-serif;
+
+  /* ====== FONT WEIGHT ====== */
+  --Lato400: 400;
+  --Lato700: 700;
+  --Poppins500: 500;
+  --Poppins600: 600;
+}
+
+/* ====== RESET CSS VARIABLES ====== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--Lato);
+  font-size: 1rem;
+}
+
+i {
+  font-size: 1rem;
+}
+
+/* ====== REUSABLE CSS STYLES ====== */
+.container {
+  margin-inline: 1.5rem;
+}
+
+/* ====== HEADER & NAV ====== */
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 100;
+  transition: background 0.3s ease-in-out;
+}
+
+.header i {
+  color: var(--White);
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 3.5rem;
+  margin-inline: 1.5rem;
+}
+
+.nav__logo {
+  display: flex;
+  align-items: center;
+  column-gap: 0.4rem;
+}
+
+.nav__logo a {
+  text-decoration: none;
+  font-weight: var(--Lato700);
+  color: var(--White);
+  cursor: pointer;
+}
+
+/* ====== CHANGE BACKGROUND HEADER ====== */
+.scroll-header {
+  background-color: var(--White);
+  box-shadow: 0 1px 4px hsla(228, 4%, 15%, 0.1);
+}
+
+.scroll-header a,
+.scroll-header i {
+  color: var(--Black);
+}
+
+/* ====== HERO ====== */
+.hero {
+  background: linear-gradient(
+    180deg,
+    rgba(22, 22, 22, 0.5) 100%,
+    rgba(45, 45, 45, 0.5) 100%
+  );
+  min-height: 100vh;
+}
+
+.hero > div img {
+  width: 100%;
+  position: absolute;
+  z-index: -1;
+  min-height: 100vh;
+  object-fit: cover;
+}
+
+.hero__quotes {
+  padding-top: 12rem;
+}
+
+.hero__quotes > div {
+  margin-top: 1.5rem;
+}
+
+.hero__quotes h1 {
+  color: var(--White);
+  font-size: 1.7rem;
+  line-height: 1.5;
+  border: 2px solid var(--White);
+  padding: 1rem;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 0.25rem;
+  box-shadow: 0 0 25px 0 var(--White);
+  font-family: var(--Poppins);
+  text-transform: uppercase;
+}
+
+.hero__quotes p {
+  margin-top: 1rem;
+  color: var(--GreyLight);
+  font-family: var(--Poppins);
+  font-size: 14px;
+  line-height: 1.75rem;
+}
+
+.hero__quotes a {
+  text-decoration: none;
+  background: var(--White);
+  padding: 10px 20px;
+  font-family: var(--Poppins);
+  font-size: 14px;
+  font-weight: var(--Poppins600);
+  color: var(--Black);
+  border-radius: 0.25rem;
+  transition: background 0.3s ease-in-out, color 0.3s ease-in-out;
+  cursor: pointer;
+}
+
+.hero__quotes a:hover {
+  background: var(--Dark);
+  color: var(--White);
+  border: 2px solid var(--White);
+}
+
+.hero__scroll-down {
+  position: relative;
+  margin-top: 10rem;
+}
+
+.hero__scroll-down i {
+  position: absolute;
+  right: 16px;
+  color: var(--White);
+}
+
+.hero__scroll-down a {
+  position: absolute;
+  transform: rotate(90deg);
+  margin-top: 3.5rem;
+  right: -20px;
+  text-align: center;
+  text-decoration: none;
+  color: var(--White);
+  font-family: var(--Poppins);
+  font-size: 14px;
+  cursor: pointer;
+  bottom: 3rem;
+}
+
+@media screen and (min-width: 576px) {
+  .header .fa-bars {
+    color: var(--Black);
+  }
+
+  .hero {
+    background: initial;
+  }
+
+  .hero__quotes {
+    padding-top: 0;
+  }
+
+  .hero__quotes h1 {
+    color: var(--Black);
+    border: 2px solid var(--Black);
+    box-shadow: 0 0 20px 0 var(--Black);
+  }
+
+  .hero__quotes p {
+    color: var(--Grey);
+  }
+
+  .hero__quotes a {
+    border: 2px solid var(--Black);
+  }
+
+  .hero > div {
+    display: flex;
+    align-items: center;
+  }
+
+  .hero > div img {
+    width: 50%;
+    min-height: 100vh;
+    position: relative;
+  }
+
+  .hero__scroll-down {
+    position: absolute;
+    width: 100%;
+    bottom: 10%;
+  }
+
+  .hero__scroll-down i,
+  .hero__scroll-down a {
+    color: var(--Black);
+    margin-top: 0;
+  }
+}
+
+@media screen and (min-width: 760px) {
+  .hero__quotes {
+    margin: 0 3rem;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .hero > div img {
+    max-height: 100vh;
+    width: 120%;
+  }
+
+  .hero__quotes h1 {
+    font-size: 2.7rem;
+    padding: 2rem 2rem;
+  }
+
+  .hero__quotes p {
+    font-size: 1rem;
+  }
+}
