@@ -60,7 +60,7 @@
 }
 
 .trending__coat-info > div i {
-  color: var(--White);
+  color: var(--Gold);
 }
 
 .trending__coat-info > div p {
@@ -113,7 +113,7 @@
 }
 
 .trending__button:hover {
-  border: 1.5px solid var(--Black);
-  background: var(--White);
-  color: var(--Black);
+  border: 1.5px solid var(--White);
+  background: var(--DarkGold);
+  color: var(--White);
 }

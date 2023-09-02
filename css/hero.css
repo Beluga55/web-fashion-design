@@ -64,7 +64,7 @@
 }
 
 .hero__quotes a:hover {
-  background: var(--Dark);
+  background: var(--DarkGold);
   color: var(--White);
   border: 2px solid var(--White);
 }
