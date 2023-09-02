@@ -1,5 +1,4 @@
 @import url("https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Poppins:wght@500;600&display=swap");
-@import url(../css/queries.css);
 
 :root {
   /* ====== COLORS ====== */
@@ -55,18 +54,37 @@ i {
   color: var(--White);
 }
 
+.header > nav > div:last-child .fa-bars.hide {
+  display: none;
+}
+
+.header > nav .nav__menu .fa-xmark.show {
+  display: inline-block;
+}
+
 .nav {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  height: 3.5rem;
-  margin-inline: 1.5rem;
+  height: 3.75rem;
+}
+
+.nav > div:last-child {
+  display: flex;
+  column-gap: 0.5rem;
+  align-items: center;
+  margin-right: 1.5rem;
+}
+
+.nav > div:last-child a {
+  height: 20px;
 }
 
 .nav__logo {
   display: flex;
   align-items: center;
   column-gap: 0.4rem;
+  margin-left: 1.5rem;
 }
 
 .nav__logo a {
@@ -74,6 +92,40 @@ i {
   font-weight: var(--Lato700);
   color: var(--White);
   cursor: pointer;
+}
+
+.nav__menu {
+  position: absolute;
+  padding: 2rem 0;
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(5px);
+  top: 0;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+  border-radius: 0 0 0.25rem 0.25rem;
+  transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
+}
+
+.nav__menu.hide {
+  opacity: 0;
+  visibility: hidden;
+}
+
+.nav__menu a {
+  text-decoration: none;
+  color: var(--White);
+  font-family: var(--Poppins);
+  font-weight: var(--Poppins500);
+  font-size: 14px;
+}
+
+.nav__menu .fa-xmark {
+  position: absolute;
+  right: 30px;
+  top: 20px;
 }
 
 /* ====== CHANGE BACKGROUND HEADER ====== */
@@ -179,8 +231,29 @@ i {
 }
 
 @media screen and (min-width: 576px) {
-  .header .fa-bars {
-    color: var(--Black);
+  .header .fa-bars,
+  .header .fa-xmark {
+    display: none;
+  }
+
+  .nav {
+    background: rgba(45, 45, 45, 0.5);
+    border-radius: 0 0 0.25rem 0.25rem;
+    backdrop-filter: blur(5px);
+  }
+
+  .nav__menu.hide {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  .nav__menu {
+    position: relative;
+    background: none;
+    backdrop-filter: none;
+    flex-direction: row;
+    width: initial;
+    padding: 0;
   }
 
   .hero {
@@ -219,12 +292,13 @@ i {
     width: 50%;
     min-height: 100vh;
     position: relative;
+    object-position: top;
   }
 
   .hero__scroll-down {
     position: absolute;
     width: 100%;
-    bottom: 10%;
+    bottom: 0;
   }
 
   .hero__scroll-down i,
@@ -234,7 +308,7 @@ i {
   }
 }
 
-@media screen and (min-width: 760px) {
+@media screen and (min-width: 768px) {
   .hero__quotes {
     margin: 0 3rem;
   }

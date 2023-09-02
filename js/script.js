@@ -8,3 +8,20 @@ function scrollHeader() {
 }
 
 window.addEventListener("scroll", scrollHeader);
+
+/*=============== HAMBURGER TO CLOSE ICON ===============*/
+const hamburger = document.querySelector(".fa-bars");
+const close = document.querySelector(".fa-xmark");
+const navMenu = document.querySelector(".nav__menu");
+
+if (hamburger) {
+  hamburger.addEventListener("click", () => {
+    navMenu.classList.remove("hide");
+  });
+}
+
+if (close) {
+  close.addEventListener("click", () => {
+    navMenu.classList.add("hide");
+  });
+}
