@@ -1,0 +1,32 @@
+/* ====== SWIPER CLASS ====== */
+.swiper-button-next::after,
+.swiper-button-prev::after {
+  content: "";
+}
+
+.swiper-slide {
+  height: initial;
+}
+
+.swiper-button-next,
+.swiper-button-prev {
+  top: initial;
+  bottom: 0;
+  width: initial;
+  height: initial;
+  background-color: var(--White);
+  border: 2px solid var(--Grey);
+  padding: 6px;
+  border-radius: 0.5rem;
+  font-size: 1.5rem;
+  color: var(--first-color);
+  transition: 0.5s;
+}
+
+.swiper-button-prev {
+  left: calc(50% - 2.75rem);
+}
+
+.swiper-button-next {
+  right: calc(50% - 2.75rem);
+}

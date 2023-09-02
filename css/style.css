@@ -1,4 +1,9 @@
 @import url("https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Poppins:wght@500;600&display=swap");
+@import url(header&nav.css);
+@import url(hero.css);
+@import url(trending.css);
+@import url(swiper.css);
+@import url(queries.css);
 
 :root {
   /* ====== COLORS ====== */
@@ -26,6 +31,10 @@
   box-sizing: border-box;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   font-family: var(--Lato);
   font-size: 1rem;
@@ -37,296 +46,33 @@ i {
 
 /* ====== REUSABLE CSS STYLES ====== */
 .container {
+  max-width: 1024px;
+  margin-inline: auto;
+}
+
+.section__padding {
   margin-inline: 1.5rem;
+  padding: 4.5rem 0;
 }
 
-/* ====== HEADER & NAV ====== */
-.header {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  z-index: 100;
-  transition: background 0.3s ease-in-out;
-}
-
-.header i {
-  color: var(--White);
-}
-
-.header > nav > div:last-child .fa-bars.hide {
-  display: none;
-}
-
-.header > nav .nav__menu .fa-xmark.show {
-  display: inline-block;
-}
-
-.nav {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  height: 3.75rem;
-}
-
-.nav > div:last-child {
-  display: flex;
-  column-gap: 0.5rem;
-  align-items: center;
-  margin-right: 1.5rem;
-}
-
-.nav > div:last-child a {
-  height: 20px;
-}
-
-.nav__logo {
-  display: flex;
-  align-items: center;
-  column-gap: 0.4rem;
-  margin-left: 1.5rem;
-}
-
-.nav__logo a {
-  text-decoration: none;
-  font-weight: var(--Lato700);
-  color: var(--White);
-  cursor: pointer;
-}
-
-.nav__menu {
-  position: absolute;
-  padding: 2rem 0;
-  background: rgba(255, 255, 255, 0.2);
-  backdrop-filter: blur(5px);
-  top: 0;
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 2rem;
-  border-radius: 0 0 0.25rem 0.25rem;
-  transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
-}
-
-.nav__menu.hide {
-  opacity: 0;
-  visibility: hidden;
-}
-
-.nav__menu a {
-  text-decoration: none;
-  color: var(--White);
+.section__title,
+.section__subtitle {
   font-family: var(--Poppins);
-  font-weight: var(--Poppins500);
-  font-size: 14px;
+  text-align: center;
 }
 
-.nav__menu .fa-xmark {
-  position: absolute;
-  right: 30px;
-  top: 20px;
-}
-
-/* ====== CHANGE BACKGROUND HEADER ====== */
-.scroll-header {
-  background-color: var(--White);
-  box-shadow: 0 1px 4px hsla(228, 4%, 15%, 0.1);
-}
-
-.scroll-header a,
-.scroll-header i {
-  color: var(--Black);
-}
-
-/* ====== HERO ====== */
-.hero {
-  background: linear-gradient(
-    180deg,
-    rgba(22, 22, 22, 0.5) 100%,
-    rgba(45, 45, 45, 0.5) 100%
-  );
-  min-height: 100vh;
-}
-
-.hero > div img {
-  width: 100%;
-  position: absolute;
-  z-index: -1;
-  min-height: 100vh;
-  object-fit: cover;
-}
-
-.hero__quotes {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: calc(100% - 3rem);
-}
-
-.hero__quotes > div {
-  margin-top: 1.5rem;
-}
-
-.hero__quotes h1 {
-  color: var(--White);
+.section__title {
   font-size: 1.7rem;
-  line-height: 1.5;
-  border: 2px solid var(--White);
-  padding: 1rem;
-  background: rgba(255, 255, 255, 0.1);
-  border-radius: 0.25rem;
-  box-shadow: 0 0 25px 0 var(--White);
-  font-family: var(--Poppins);
   text-transform: uppercase;
 }
 
-.hero__quotes p {
-  margin-top: 1rem;
-  color: var(--GreyLight);
-  font-family: var(--Poppins);
+.section__subtitle {
+  margin-top: 0.5rem;
+  color: var(--Grey);
   font-size: 14px;
-  line-height: 1.75rem;
-  text-align: justify;
+  padding-inline: 1rem;
 }
 
-.hero__quotes a {
-  text-decoration: none;
-  background: var(--White);
-  padding: 10px 20px;
-  font-family: var(--Poppins);
-  font-size: 14px;
-  font-weight: var(--Poppins600);
-  color: var(--Black);
-  border-radius: 0.25rem;
-  transition: background 0.3s ease-in-out, color 0.3s ease-in-out;
-  cursor: pointer;
-}
-
-.hero__quotes a:hover {
-  background: var(--Dark);
-  color: var(--White);
-  border: 2px solid var(--White);
-}
-
-.hero__scroll-down i {
-  position: absolute;
-  right: 16px;
-  bottom: 1.25rem;
-  color: var(--White);
-}
-
-.hero__scroll-down a {
-  position: absolute;
-  transform: rotate(90deg);
-  right: -20px;
-  text-align: center;
-  text-decoration: none;
-  color: var(--White);
-  font-family: var(--Poppins);
-  font-size: 14px;
-  cursor: pointer;
-  bottom: 5rem;
-}
-
-@media screen and (min-width: 576px) {
-  .header .fa-bars,
-  .header .fa-xmark {
-    display: none;
-  }
-
-  .nav {
-    background: rgba(45, 45, 45, 0.5);
-    border-radius: 0 0 0.25rem 0.25rem;
-    backdrop-filter: blur(5px);
-  }
-
-  .nav__menu.hide {
-    opacity: 1;
-    visibility: visible;
-  }
-
-  .nav__menu {
-    position: relative;
-    background: none;
-    backdrop-filter: none;
-    flex-direction: row;
-    width: initial;
-    padding: 0;
-  }
-
-  .hero {
-    background: initial;
-  }
-
-  .hero__quotes {
-    padding-top: 0;
-    position: relative;
-    top: 0;
-    left: 0;
-    transform: translate(0%, 0%);
-    margin-inline: 1.5rem;
-  }
-
-  .hero__quotes h1 {
-    color: var(--Black);
-    border: 2px solid var(--Black);
-    box-shadow: 0 0 20px 0 var(--Black);
-  }
-
-  .hero__quotes p {
-    color: var(--Grey);
-  }
-
-  .hero__quotes a {
-    border: 2px solid var(--Black);
-  }
-
-  .hero > div {
-    display: flex;
-    align-items: center;
-  }
-
-  .hero > div img {
-    width: 50%;
-    min-height: 100vh;
-    position: relative;
-    object-position: top;
-  }
-
-  .hero__scroll-down {
-    position: absolute;
-    width: 100%;
-    bottom: 0;
-  }
-
-  .hero__scroll-down i,
-  .hero__scroll-down a {
-    color: var(--Black);
-    margin-top: 0;
-  }
-}
-
-@media screen and (min-width: 768px) {
-  .hero__quotes {
-    margin: 0 3rem;
-  }
-}
-
-@media screen and (min-width: 1024px) {
-  .hero > div img {
-    max-height: 100vh;
-    width: 120%;
-  }
-
-  .hero__quotes h1 {
-    font-size: 2.7rem;
-    padding: 2rem 2rem;
-  }
-
-  .hero__quotes p {
-    font-size: 1rem;
-    width: calc(100% - 20%);
-  }
+.bx {
+  font-size: 1.25rem;
 }

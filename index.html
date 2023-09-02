@@ -4,17 +4,34 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="icon" href="images/favicon.ico" type="image/x-icon" />
+
+    <!-- ======== FONT AWESOME ======== -->
     <script
       src="https://kit.fontawesome.com/21bf2f8b90.js"
       crossorigin="anonymous"
     ></script>
+
+    <!--=============== BOXICONS ===============-->
+    <link
+      href="https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+
+    <!-- ======== SWIPER CSS ======== -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css"
+    />
+
+    <!-- ======== CSS ======== -->
     <link rel="stylesheet" href="css/style.css" />
+
     <title>Castellan</title>
   </head>
   <body>
     <!-- ======== HEADER & NAV ======== -->
     <header class="header">
-      <nav class="nav">
+      <nav class="nav container">
         <div class="nav__logo">
           <a href="index.html">Castellan</a>
           <i class="fa-solid fa-user-secret"></i>
@@ -37,6 +54,7 @@
 
     <!-- ======== MAIN ======== -->
     <main>
+      <!-- ======== HERO ======== -->
       <section class="hero">
         <div>
           <img src="images/hero.jpg" alt="hero.jpg" />
@@ -58,10 +76,160 @@
         </div>
         <div class="hero__scroll-down">
           <i class="fa-solid fa-arrow-down-long fa-beat-fade"></i>
-          <a href="#">Scroll Down</a>
+          <a href="#trending">Scroll Down</a>
+        </div>
+      </section>
+
+      <!-- ======== TRENDING ======== -->
+      <section class="trending container" id="trending">
+        <div class="trending__container section__padding">
+          <h2 class="section__title">Trending</h2>
+          <p class="section__subtitle">
+            <q
+              >Explore the world of haute couture, trends, and the artistry
+              behind clothing and accessories.
+            </q>
+          </p>
+
+          <!-- ======== SWIPER ======== -->
+          <div class="swiper trending__swiper">
+            <div class="swiper-wrapper">
+              <div class="swiper-slide trending__card">
+                <div>
+                  <img src="images/coat1.jpg" alt="coat-1" />
+                  <div class="trending__info">
+                    <h4>More Information</h4>
+                  </div>
+                </div>
+                <h3>Tuxedo Jacket</h3>
+                <div class="trending__description">
+                  <p class="trending__price">$250</p>
+                  <div>
+                    <button class="trending__button">Add To Cart</button>
+                  </div>
+                </div>
+              </div>
+              <div class="swiper-slide trending__card">
+                <div>
+                  <img src="images/coats2.jpg" alt="coat-2" />
+                  <div class="trending__info">
+                    <h4>More Information</h4>
+                  </div>
+                </div>
+                <h3>Bomber Jacket</h3>
+                <div class="trending__description">
+                  <p class="trending__price">$150</p>
+                  <div>
+                    <button class="trending__button">Add To Cart</button>
+                  </div>
+                </div>
+              </div>
+              <div class="swiper-slide trending__card">
+                <div>
+                  <img src="images/coat3.jpg" alt="coat-3" />
+                  <div class="trending__info">
+                    <h4>More Information</h4>
+                  </div>
+                </div>
+                <h3>Casual Coat</h3>
+                <div class="trending__description">
+                  <p class="trending__price">$120</p>
+                  <div>
+                    <button class="trending__button">Add To Cart</button>
+                  </div>
+                </div>
+              </div>
+              <div class="swiper-slide trending__card">
+                <div>
+                  <img src="images/coat4.jpg" alt="coat-4" />
+                  <div class="trending__info">
+                    <h4>More Information</h4>
+                  </div>
+                </div>
+                <h3>Blazer</h3>
+                <div class="trending__description">
+                  <p class="trending__price">$175</p>
+                  <div>
+                    <button class="trending__button">Add To Cart</button>
+                  </div>
+                </div>
+              </div>
+              <div class="swiper-slide trending__card">
+                <div>
+                  <img src="images/coat5.jpg" alt="coat-5" />
+                  <div class="trending__info">
+                    <h4>More Information</h4>
+                  </div>
+                </div>
+                <h3>Sports Coat</h3>
+                <div class="trending__description">
+                  <p class="trending__price">$200</p>
+                  <div>
+                    <button class="trending__button">Add To Cart</button>
+                  </div>
+                </div>
+              </div>
+              <div class="swiper-slide trending__card">
+                <div>
+                  <img src="images/coat6.jpg" alt="coat-6" />
+                  <div class="trending__info">
+                    <h4>More Information</h4>
+                  </div>
+                </div>
+                <h3>Long Coat</h3>
+                <div class="trending__description">
+                  <p class="trending__price">$225</p>
+                  <div>
+                    <button class="trending__button">Add To Cart</button>
+                  </div>
+                </div>
+              </div>
+              <div class="swiper-slide trending__card">
+                <div>
+                  <img src="images/coat7.jpg" alt="coat-7" />
+                  <div class="trending__info">
+                    <h4>More Information</h4>
+                  </div>
+                </div>
+                <h3>Pea Coat</h3>
+                <div class="trending__description">
+                  <p class="trending__price">$165</p>
+                  <div>
+                    <button class="trending__button">Add To Cart</button>
+                  </div>
+                </div>
+              </div>
+              <div class="swiper-slide trending__card">
+                <div>
+                  <img src="images/coat8.jpg" alt="coat-8" />
+                  <div class="trending__info">
+                    <h4>More Information</h4>
+                  </div>
+                </div>
+                <h3>Trench Coat</h3>
+                <div class="trending__description">
+                  <p class="trending__price">$270</p>
+                  <div>
+                    <button class="trending__button">Add To Cart</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- ======== SWIPER PAGINATION ======== -->
+            <div class="swiper-button-next">
+              <i class="bx bx-chevron-right"></i>
+            </div>
+            <div class="swiper-button-prev">
+              <i class="bx bx-chevron-left"></i>
+            </div>
+          </div>
         </div>
       </section>
     </main>
+
+    <!-- ======== SWIPER JS ======== -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
 
     <!-- ======== JAVASCRIPT ======== -->
     <script src="js/script.js"></script>

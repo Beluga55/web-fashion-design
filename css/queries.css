@@ -1,0 +1,110 @@
+/* ====== MEDIA QUERIES ======= */
+@media screen and (min-width: 576px) {
+  .header .fa-bars,
+  .header .fa-xmark {
+    display: none;
+  }
+
+  .header {
+    background: rgba(45, 45, 45, 0.5);
+    border-radius: 0 0 0.25rem 0.25rem;
+    backdrop-filter: blur(5px);
+  }
+
+  .nav__menu a {
+    font-weight: var(--Poppins500);
+  }
+
+  .scroll-header a,
+  .scroll-header i {
+    color: var(--White);
+  }
+
+  .nav__menu.hide {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  .nav__menu {
+    position: relative;
+    background: none;
+    backdrop-filter: none;
+    flex-direction: row;
+    width: initial;
+    padding: 0;
+  }
+
+  .hero {
+    background: initial;
+  }
+
+  .hero__quotes {
+    padding-top: 0;
+    position: relative;
+    top: 0;
+    left: 0;
+    transform: translate(0%, 0%);
+    margin-inline: 1.5rem;
+  }
+
+  .hero__quotes h1 {
+    color: var(--Black);
+    border: 2px solid var(--Black);
+    box-shadow: 0 0 20px 0 var(--Black);
+  }
+
+  .hero__quotes p {
+    color: var(--Grey);
+  }
+
+  .hero__quotes a {
+    border: 2px solid var(--Black);
+  }
+
+  .hero > div {
+    display: flex;
+    align-items: center;
+  }
+
+  .hero > div img {
+    width: 50%;
+    min-height: 100vh;
+    position: relative;
+    object-position: top;
+  }
+
+  .hero__scroll-down {
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+  }
+
+  .hero__scroll-down i,
+  .hero__scroll-down a {
+    color: var(--Black);
+    margin-top: 0;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .hero__quotes {
+    margin: 0 3rem;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .hero > div img {
+    max-height: 100vh;
+    width: 120%;
+  }
+
+  .hero__quotes h1 {
+    font-size: 2.7rem;
+    padding: 2rem 2rem;
+  }
+
+  .hero__quotes p {
+    font-size: 1rem;
+    width: calc(100% - 20%);
+  }
+}
