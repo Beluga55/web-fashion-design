@@ -1,0 +1,46 @@
+.testimonials__card {
+  padding: 2rem;
+}
+
+.testimonials__card:hover,
+.trending__card:hover {
+  border: 2px solid var(--DarkGold);
+}
+
+.testimonials__card > div {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.testimonials__card > div > div {
+  position: absolute;
+  bottom: 30px;
+}
+
+.testimonials__card img {
+  width: 70px;
+  height: 70px;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+.testimonials__card h4 {
+  font-family: var(--Poppins);
+  text-transform: uppercase;
+  text-align: center;
+}
+
+.testimonials__card p {
+  font-family: var(--Poppins);
+  font-size: 14px;
+  text-align: justify;
+  line-height: 1.65;
+  margin-bottom: 2rem;
+}
+
+.fa-star {
+  color: var(--Gold);
+}

@@ -50,5 +50,6 @@
 }
 
 .banner__overlay span {
+  color: var(--Gold);
   border-bottom: 2px solid var(--White);
 }

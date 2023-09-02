@@ -1,13 +1,16 @@
 /* ====== TRENDING ======= */
-.trending__swiper {
+.trending__swiper,
+.testimonials__container {
   padding: 2rem 0 5rem;
 }
 
-.trending__card {
+.trending__card,
+.testimonials__card {
   width: 300px;
   padding: 1rem;
   border: 2px solid var(--Black);
   border-radius: 0.25rem;
+  transition: border 0.3s ease-in-out;
 }
 
 .trending__card > div {
@@ -76,7 +79,7 @@
 
 .trending__card h3 {
   margin-top: 1rem;
-  border-bottom: 2px solid var(--Black);
+  border-bottom: 2px solid var(--Gold);
   width: fit-content;
   border-radius: 0 0 0.1rem 0.1rem;
 }
