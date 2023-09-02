@@ -87,6 +87,10 @@
   font-size: 1.25rem;
 }
 
+.trending__card del {
+  margin-right: 0.5rem;
+}
+
 .trending__description {
   display: flex;
   align-items: center;
