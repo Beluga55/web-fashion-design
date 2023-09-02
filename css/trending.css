@@ -44,15 +44,29 @@
   border-bottom: 2px solid var(--White);
   width: fit-content;
   font-size: 0.836rem;
+  text-transform: uppercase;
 }
 
-.trending__info button {
-  background: var(--White);
-  border: none;
-  outline: none;
-  padding: 10px 20px;
-  border-radius: 0.25rem;
-  font-family: var(--Poppins);
+.trending__coat-info {
+  display: grid;
+  margin-top: 0.75rem;
+  row-gap: 0.5rem;
+}
+
+.trending__coat-info > div {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.trending__coat-info > div i {
+  color: var(--White);
+}
+
+.trending__coat-info > div p {
+  color: var(--White);
+  font-size: 0.75rem;
+  font-weight: var(--Poppins500);
 }
 
 .trending__card > div:hover .trending__info {
