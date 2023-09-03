@@ -1,0 +1,81 @@
+.newsletter__form {
+  margin-top: 4rem;
+}
+
+.newsletter__form-wrapper  > div {
+  display: flex;
+  flex-direction: column;
+}
+
+.newsletter__form-wrapper > div > label {
+  text-transform: uppercase;
+  margin-bottom: 0.75rem;
+  font-weight: var(--Poppins600);
+  border-bottom: 2px solid var(--Gold);
+  width: fit-content;
+}
+
+.newsletter__form-wrapper > div > label,
+.newsletter__form-wrapper > div > input[type="text"],
+.newsletter__form-wrapper > div > input[type="email"],
+.newsletter__form-wrapper > div > textarea {
+  font-family: var(--Poppins);
+}
+
+.newsletter__form-wrapper > div > input[type="text"],
+.newsletter__form-wrapper > div > input[type="email"],
+.newsletter__form-wrapper > div > textarea {
+  padding: 0.5rem 1rem;
+  border: 2px solid var(--Dark);
+  border-radius: 0.25rem;
+}
+
+.newsletter__form-wrapper > div {
+  margin: 0.25rem 0 0.75rem;
+}
+
+.newsletter__form-wrapper > div > p {
+  margin-top: 0.25rem;
+  font-size: 13px;
+  color: Red;
+  font-weight: var(--Poppins500);
+  font-family: var(--Poppins);
+  display: none;
+}
+
+.newsletter__form-wrapper > div > p.show {
+  display: inline-block;
+}
+
+.newsletter__form > form > input[type="submit"] {
+  padding: 0.75rem 1rem;
+  font-family: var(--Poppins);
+  font-weight: var(--Poppins600);
+  background: var(--Dark);
+  color: var(--White);
+  transition: color 0.3s ease-in-out, background 0.3s ease-in-out;
+  border: none;
+  outline: none;
+  border-radius: 0.25rem;
+}
+
+.newsletter__form > form > input[type="submit"]:hover {
+  background: var(--DarkGold);
+}
+
+.newsletter__overlay > div:not(:last-child) {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.newsletter__overlay img {
+  position: absolute;
+  top: 1rem;
+  left: 3rem;
+}
+
+.newsletter__social {
+  display: none;
+}

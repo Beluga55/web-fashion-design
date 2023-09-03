@@ -4,8 +4,9 @@
 @import url(trending.css);
 @import url(swiper.css);
 @import url(banner.css);
-@import url(queries.css);
 @import url(testimonials.css);
+@import url(newsletter.css);
+@import url(queries.css);
 
 :root {
   /* ====== COLORS ====== */
