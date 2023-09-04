@@ -101,6 +101,16 @@
     grid-template-columns: repeat(2, 1fr);
   }
 
+  .footer__outer-row-first,
+  .footer__outer-row-second {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+  }
+
+  .footer__outer-row-first > div:last-child {
+    margin-top: 0rem;
+  }
 }
 
 @media screen and (min-width: 768px) {
@@ -223,7 +233,11 @@
   .fa-brands:hover {
     color: var(--DarkGold);
   }
-  
+
+  .newsletter__container.section__padding {
+    padding: 0 0 6.5rem 0;
+  }
+
   .newsletter__social-icon {
     display: flex;
     column-gap: 0.45rem;
@@ -231,6 +245,25 @@
 
   .newsletter__form-wrapper {
     display: initial;
+  }
+
+  .footer__row {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .footer__outer-row-first > div:last-child,
+  .footer__outer-row-second > div:first-child,
+  .footer__outer-row-second > div:last-child {
+    margin-top: 0;
+  }
+
+  .footer__outer-row-second .footer__col:first-child {
+    justify-self: center;
+  }
+
+  .footer__outer-row-first .footer__col:last-child {
+    justify-self: self-end;
   }
 }
 

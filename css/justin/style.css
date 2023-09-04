@@ -1,13 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Poppins:wght@500;600&display=swap");
-@import url(header&nav.css);
-@import url(hero.css);
-@import url(trending.css);
-@import url(swiper.css);
-@import url(banner.css);
-@import url(testimonials.css);
-@import url(newsletter.css);
-@import url(footer.css);
-@import url(queries.css);
+
+@import url(index/index.css);
 
 :root {
   /* ====== COLORS ====== */
