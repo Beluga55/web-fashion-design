@@ -1,0 +1,87 @@
+.footer {
+  background: var(--Dark);
+}
+
+.footer__container {
+  padding: 3rem 1.5rem;
+}
+
+.footer__logo {
+  display: flex;
+  column-gap: 0.3rem;
+  align-items: center;
+}
+
+.footer__logo h3 {
+  border-bottom: 2px solid var(--Gold);
+}
+
+.footer__logo h3,
+.footer__logo i {
+  color: var(--White);
+}
+
+.footer__col h3 {
+  font-size: 1.25rem;
+  border-bottom: 2px solid var(--Gold);
+  color: var(--White);
+  width: fit-content;
+}
+
+.footer__col p {
+  color: var(--White);
+  font-family: var(--Poppins);
+  margin-top: 1rem;
+  font-size: 14px;
+  text-align: justify;
+}
+
+.footer__outer-row-first > div:last-child,
+.footer__outer-row-second > div:first-child,
+.footer__outer-row-second > div:last-child {
+  margin-top: 1.5rem;
+}
+
+.social__links,
+.quick__links {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.social__links > div,
+.quick__links > div {
+  display: flex;
+  align-items: center;
+  column-gap: 0.75rem;
+}
+
+.social__links > div > i,
+.quick__links > div > i {
+  color: var(--White);
+}
+
+.social__links > div > p,
+.quick__links > div > p {
+  margin-top: 0;
+}
+
+.quick__links a {
+  text-decoration: none;
+  font-family: var(--Poppins);
+  font-size: 14px;
+  color: var(--White)
+}
+
+.social__icon {
+  display: flex;
+  column-gap: 0.5rem;
+  margin-top: 1rem;
+}
+
+.social__icon i {
+  font-size: 1.75rem;
+  border-radius: 0.25rem;
+  color: var(--White);
+}
