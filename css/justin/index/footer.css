@@ -71,7 +71,12 @@
   text-decoration: none;
   font-family: var(--Poppins);
   font-size: 14px;
-  color: var(--White)
+  color: var(--White);
+  transition: color 0.3s ease-in-out;
+}
+
+.quick__links a:hover {
+  color: var(--Gold);
 }
 
 .social__icon {

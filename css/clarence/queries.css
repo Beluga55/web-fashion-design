@@ -1,0 +1,8 @@
+@media screen and (min-width: 576px) {
+  .nav__menu a,
+  .nav__logo a,
+  .nav__logo i,
+  .header i {
+    color: var(--White);
+  }
+}

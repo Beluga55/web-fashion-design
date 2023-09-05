@@ -1,0 +1,46 @@
+@import url(../justin/index/header&nav.css);
+@import url(../justin/index/queries.css);
+@import url(login.css);
+@import url(queries.css);
+@import url("https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Poppins:wght@500;600&display=swap");
+
+:root {
+  /* ====== COLORS ====== */
+  --Grey: hsl(228, 15%, 50%);
+  --GreyLight: hsl(228, 12%, 75%);
+  --Dark: hsl(228, 16%, 12%);
+  --White: #ffffff;
+  --Black: #000000;
+  --Gold: #ce9f56;
+  --DarkGold: #b67d43;
+
+  /* ====== FONT ====== */
+  --Lato: "Lato", sans-serif;
+  --Poppins: "Poppins", sans-serif;
+
+  /* ====== FONT WEIGHT ====== */
+  --Lato400: 400;
+  --Lato700: 700;
+  --Poppins500: 500;
+  --Poppins600: 600;
+}
+
+/* ====== RESET CSS VARIABLES ====== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--Lato);
+  font-size: 1rem;
+}
+
+i {
+  font-size: 1rem;
+}

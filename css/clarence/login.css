@@ -1,8 +1,21 @@
 @import url("https://fonts.googleapis.com/css2?family=Raleway&display=swap");
-
 @import url("https://fonts.googleapis.com/css2?family=Raleway:wght@400;500&display=swap");
 
+@import url(style.css);
+
 /*---------------------Headings---------------------*/
+.header i {
+  color: var(--Black);
+}
+
+.nav__logo a {
+  color: var(--Black);
+}
+
+.nav__menu a {
+  color: var(--Black);
+}
+
 .container {
   margin-inline: auto;
 }

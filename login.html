@@ -7,20 +7,14 @@
     <link rel="icon" type="image/x-icon" href="images/favicon.ico" />
 
     <!------------[CSS Link]-------------->
-    <link rel="stylesheet" href="css/clarence/login.css" />
+    <link rel="stylesheet" href="css/clarence/style.css" />
     <title>My Account</title>
 
-    <!------------[Font Awesome Link]---------->
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
-    />
-
-    <!--[Google Font Link]-->
-    <link
-      rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=Raleway&display=swap"
-    />
+    <!-- ======== FONT AWESOME ======== -->
+    <script
+      src="https://kit.fontawesome.com/21bf2f8b90.js"
+      crossorigin="anonymous"
+    ></script>
 
     <link
       href="https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css"
@@ -30,18 +24,23 @@
   <body>
     <!-----------------------------[Header]---------------------------->
     <header class="header">
-      <nav class="nav">
-        <div class="headings-design">
-          <a href="index.html" class="castellan-title"> Castellan</a>
+      <nav class="nav container">
+        <div class="nav__logo">
+          <a href="index.html">Castellan</a>
           <i class="fa-solid fa-user-secret"></i>
         </div>
+        <!-- ======== NAVIGATION MENU ======== -->
+        <div class="nav__menu hide">
+          <a href="index.html">Home</a>
+          <a href="#">About</a>
+          <a href="#">Products</a>
+          <a href="#">FAQs</a>
+          <a href="#">Contact Us</a>
+          <i class="fa-solid fa-xmark"></i>
+        </div>
         <div>
-          <a href="#" class="h1">Home</a>
-          <a href="#" class="h2">About</a>
-          <a href="#" class="h3">Products</a>
-          <a href="#" class="h4">FAQs</a>
-          <a href="#" class="h5">Contact Us</a>
-          <button class = "sign-up-button">Sign Up</button>
+          <i class="fa-solid fa-bars"></i>
+          <a href="login.html"><i class="fa-solid fa-arrow-right-to-bracket"></i></a>
         </div>
       </nav>
     </header>
@@ -89,5 +88,7 @@
         </div>
       </div>
     </main>
+
+    <script src="js/script.js"></script>
   </body>
 </html>
