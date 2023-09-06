@@ -196,10 +196,6 @@
     border: 2px solid var(--White);
   }
 
-  .newsletter__overlay img {
-    left: 5rem;
-  }
-
   .newsletter__social {
     display: flex;
     align-items: center;

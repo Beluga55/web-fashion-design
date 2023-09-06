@@ -40,55 +40,53 @@
         </div>
         <div>
           <i class="fa-solid fa-bars"></i>
-          <a href="login.html"><i class="fa-solid fa-arrow-right-to-bracket"></i></a>
+          <a href="login.html"
+            ><i class="fa-solid fa-arrow-right-to-bracket"></i
+          ></a>
         </div>
       </nav>
     </header>
-    <!--[The icon is not showing, Justin help. Wah my coding like lapsap I see I also know]-->
 
     <!------------------------[Log in Section]------------------------->
     <main>
-      <div class="log-in-section">
-        <h1 class="my-castellan-account">MY CASTELLAN ACCOUNT</h1>
-
-        <!--------------------[Continue with Apple ^ Google]----------------------->
-        <div>
-          <button class="continue-with-google-button">
-            <span class="span-button-google">CONTINUE WITH GOOGLE</span>
-          </button>
-        </div>
-
-        <div>
-          <button class="continue-with-apple-button">
-            <span class="span-button-apple">CONTINUE WITH APPLE</span>
-          </button>
-        </div>
-
-        <!--------------------------[Description Section]-------------------------------->
-        <div>
-          <p class="or-section">OR</p>
-        </div>
-        <div>
-          <p class="continue-with-email">CONTINUE WITH YOUR EMAIL</p>
-          <p class="continue-address">ADDRESS</p>
-        </div>
-        <div id="div-description">
-          <p class="sign-in-description">
-            Sign in with your CASTELLAN email and password or
+      <section>
+        <div class="login__container">
+          <h2 class="section__title">Login</h2>
+          <p class="section__subtitle">
+            Login to get amazing discounts and perks.
           </p>
-          <p class="create-profile-section">create a profile if you are new.</p>
-        </div>
 
-        <div class="email-container">
-          <input type="email" placeholder="EMAIL*" class="email-box" />
+          <!-- Login Form -->
+          <form action="#" class="form">
+            <div class="login__form">
+              <div>
+                <label>Email</label>
+                <input
+                  type="email"
+                  id="email-login"
+                  placeholder="Enter Your Email"
+                />
+                <p class="email-error">Email is required</p>
+              </div>
+              <div>
+                <label>Password</label>
+                <input
+                  type="password"
+                  id="password-login"
+                  placeholder="Enter Your Password"
+                />
+                <p class="password-error">Password is required</p>
+              </div>
+              <div>
+                <input type="submit" class="login-submit" value="Login" />
+              </div>
+            </div>
+          </form>
         </div>
-
-        <div>
-          <button class="continue-button">CONTINUE</button>
-        </div>
-      </div>
+      </section>
     </main>
 
-    <script src="js/script.js"></script>
+    <script src="js/index.js"></script>
+    <script src="js/login.js"></script>
   </body>
 </html>
