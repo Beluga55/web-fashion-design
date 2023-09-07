@@ -22,7 +22,8 @@
 
 /*---------------------Login---------------------*/
 .login__container {
-  margin-top: 8rem;
+  margin-top: 7.5rem;
+  margin-bottom: 5rem;
 }
 
 .form {
@@ -98,6 +99,7 @@
 .login-submit:hover {
   color: var(--White);
   background: var(--DarkGold);
+  border: none;
 }
 
 .login__form > div:nth-child(3) {
