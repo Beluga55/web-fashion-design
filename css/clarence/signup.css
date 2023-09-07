@@ -1,0 +1,158 @@
+@import url("https://fonts.googleapis.com/css2?family=Raleway&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Raleway:wght@400;500&display=swap");
+
+.title-account {
+  text-align: center;
+  padding-top: 100px;
+  font-family: var(--Poppins);
+}
+
+.sign-up-to-account {
+  text-align: center;
+  font-family: var(--Poppins);
+  margin-top: 0.5rem;
+  color: var(--Grey);
+  font-size: 14px;
+  padding-inline: 1rem;
+}
+
+.gender-input-div {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 20px 0px 35px 0px;
+}
+
+.first-name-div {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0px 0px 35px 0px;
+}
+
+.last-name-div {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0px 0px 35px 0px;
+}
+
+.month-date-year-div {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/*==========================[sign-up-container]========================*/
+
+.sign-up-form {
+  border: 2px solid rgba(45, 45, 45, 0.5);
+  border-radius: 0.25rem;
+  width: 30rem;
+  height: 42rem;
+  display: flexbox;
+  align-items: center;
+  justify-content: center;
+  margin: 10px 0px 0px 33rem;
+  padding: 30px 20px 20px 10px;
+}
+
+/*==========================[id input type]========================*/
+
+#gender-input-box {
+  border-width: 1.5px;
+  height: 45px;
+  width: 300px;
+  text-align: justify;
+  font-family: var(--Poppins);
+  padding-left: 20px;
+  border: 2px solid black;
+  border-radius: 5px;
+}
+
+#first-name-box {
+  height: 45px;
+  width: 300px;
+  border-width: 1px;
+  font-family: var(--Poppins);
+  padding-left: 20px;
+  border: 2px solid black;
+  border-radius: 5px;
+}
+
+#last-name-box {
+  height: 45px;
+  width: 300px;
+  border: 2px solid black;
+  border-radius: 5px;
+  padding-left: 20px;
+  font-family: var(--Poppins);
+}
+
+#month-box {
+  height: 45px;
+  width: 78px;
+  border-width: 1px;
+  border: 2px solid black;
+  margin: 0px 35px 0px 0px;
+  font-family: var(--Poppins);
+  border-radius: 5px;
+  padding-left: 6px;
+}
+
+#date-box {
+  height: 45px;
+  width: 78px;
+  border-width: 1px;
+  border: 2px solid black;
+  margin: 0px 35px 0px 0px;
+  font-family: var(--Poppins);
+  border-radius: 5px;
+  padding-left: 6px;
+}
+
+#year-box {
+  height: 45px;
+  width: 78px;
+  border-width: 1px;
+  border: 2px solid black;
+  margin: 0px 0px 0px 0px;
+  font-family: var(--Poppins);
+  border-radius: 5px;
+  padding-left: 6px;
+}
+
+/*================================[Paragraph class]===================================*/
+
+.description-container {
+  text-align: justify;
+  word-spacing: 2px;
+  font-family: var(--Poppins);
+  margin: 50px 0px 0px 70px;
+  width: 310px;
+}
+
+/*=======================[Buttons]==========================*/
+
+.create-profile-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.create__profile__button {
+  margin: 20px 0px 0px 0px;
+  height: 3rem;
+  width: 19rem;
+  border: 2px solid black;
+  background-color: white;
+  transition: background 0.5s, color 0.5s;
+  font-family: var(--Poppins);
+}
+
+/*======================[Pseudo Element]====================*/
+
+.create__profile__button:hover {
+  background: var(--DarkGold);
+  color: white;
+}
