@@ -22,7 +22,7 @@
 
 /*---------------------Login---------------------*/
 .login__container {
-  margin-top: 10rem;
+  margin-top: 8rem;
 }
 
 .form {
@@ -33,7 +33,9 @@
 
 .login__form {
   margin: 2rem 1rem;
-  padding: 0 1rem;
+  padding: 1rem 1.5rem 0;
+  border: 2px solid rgba(45, 45, 45, 0.5);
+  border-radius: 0.25rem;
 }
 
 .login__form > div {
@@ -80,7 +82,7 @@
 }
 
 .login-submit {
-  margin-top: 1rem;
+  margin-top: 1.25rem;
   padding: 0.6rem 2rem;
   background: transparent;
   border: 2px solid var(--Dark);
@@ -98,8 +100,43 @@
   background: var(--DarkGold);
 }
 
-.login__form > div:last-child {
+.login__form > div:nth-child(3) {
   display: flex;
-  align-items: center;
-  justify-content: center;
+  position: relative;
+  align-items: flex-start;
+}
+
+.login__form > div:nth-child(3) img {
+  position: absolute;
+  right: 20px;
+  width: 50px;
+  height: 50px;
+  top: 30px;
+}
+
+.login__form > div:last-child {
+  flex-direction: row;
+  column-gap: 1rem;
+  margin: 2rem 0;
+}
+
+.login__form > div:last-child span,
+.login__form > div:last-child a {
+  font-family: var(--Poppins);
+  font-size: 14px;
+}
+
+.login__form > div:last-child a {
+  text-decoration: none;
+  text-transform: uppercase;
+  color: var(--Black);
+  transition: color 0.3s ease-in-out;
+}
+
+.login__form > div:last-child a:hover {
+  color: var(--DarkGold);
+}
+
+.horizontal__line {
+  border-left: 2px solid var(--DarkGold);
 }
