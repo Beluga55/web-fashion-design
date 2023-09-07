@@ -1,0 +1,71 @@
+.signup__container {
+  margin-top: 7.5rem;
+}
+
+.signup__form {
+  border: 2px solid rgba(45, 45, 45, 0.5);
+  margin: 2rem 1.5rem;
+  border-radius: 0.25rem;
+  padding: 1.5rem;
+}
+
+.signup__form > div {
+  display: flex;
+  gap: 1rem;
+}
+
+.signup__first-name label,
+.signup__last-name label,
+.signup__content > div label {
+  font-family: var(--Poppins);
+  text-transform: uppercase;
+  font-size: 14px;
+  border-bottom: 2px solid var(--DarkGold);
+  width: fit-content;
+}
+
+.signup__first-name input[type="text"],
+.signup__last-name input[type="text"] {
+  width: 100%;
+  margin-top: 0.5rem;
+  padding: 0.5rem 0 0.5rem 0.75rem;
+  border: 2px solid var(--Black);
+  border-radius: 0.2rem;
+  font-family: var(--Poppins);
+  font-size: 12px;
+}
+
+.signup__content {
+  display: flex;
+  flex-direction: column;
+  margin-top: 1rem;
+}
+
+.signup__content > div {
+  display: flex;
+  flex-direction: column;
+  gap: 0.7rem;
+}
+
+.signup__content input[type="email"],
+.signup__content input[type="password"],
+.signup__content button {
+  padding: 0.5rem 0 0.5rem 0.75rem;
+  border: 2px solid var(--Black);
+  border-radius: 0.2rem;
+  font-family: var(--Poppins);
+  font-size: 12px;
+}
+
+.signup__content button {
+  margin-top: 0.75rem;
+  background: var(--White);
+  font-weight: var(--Poppins600);
+  transition: background 0.3s ease-in-out, color 0.3s ease-in-out;
+}
+
+.signup__content button:hover {
+  background: var(--Gold);
+  border: none;
+  color: var(--White);
+}

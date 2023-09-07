@@ -5,6 +5,16 @@
   .header i {
     color: var(--White);
   }
+
+  .signup {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .signup__container {
+    width: 400px;
+  }
 }
 
 @media screen and (min-width: 768px) {
