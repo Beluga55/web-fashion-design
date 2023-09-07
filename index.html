@@ -42,12 +42,14 @@
           <a href="#">About</a>
           <a href="#">Products</a>
           <a href="#">FAQs</a>
-          <a href="#">Contact Us</a>
+          <a href="#contact">Contact Us</a>
           <i class="fa-solid fa-xmark"></i>
         </div>
         <div>
           <i class="fa-solid fa-bars"></i>
-          <a href="login.html"><i class="fa-solid fa-arrow-right-to-bracket"></i></a>
+          <a href="login.html"
+            ><i class="fa-solid fa-arrow-right-to-bracket"></i
+          ></a>
         </div>
       </nav>
     </header>
@@ -605,13 +607,23 @@
                 value="Subscribe To Our Newsletter"
               />
             </form>
+            <div class="newsletter__success-overlay">
+              <div>
+                <img src="images/check.svg" alt="check.svg" />
+                <div class="newsletter__success-text">
+                  <h2>Thanks for the feedback</h2>
+                  <p>You will receive the latest products and trends in your email.</p>
+                  <button id="main-page">Go back to main page</button>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </section>
     </main>
 
     <!-- ======== FOOTER ======== -->
-    <footer class="footer">
+    <footer class="footer" id="contact">
       <div class="footer__container container">
         <div class="footer__row">
           <div class="footer__outer-row-first">

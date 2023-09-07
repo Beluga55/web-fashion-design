@@ -101,6 +101,10 @@
     grid-template-columns: repeat(2, 1fr);
   }
 
+  .newsletter__success-overlay > div {
+    width: 400px;
+  }
+
   .footer__outer-row-first,
   .footer__outer-row-second {
     display: grid;
