@@ -1,8 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Raleway&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Raleway:wght@400;500&display=swap");
 
-@import url(style.css);
-
 /*---------------------Headings---------------------*/
 .header i {
   color: var(--Black);
@@ -141,4 +139,73 @@
 
 .horizontal__line {
   border-left: 2px solid var(--DarkGold);
+}
+
+.login__overlay {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 0;
+  background: rgba(45, 45, 45, 0.5);
+  z-index: 100;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
+}
+
+.login__overlay > div img {
+  width: 70px;
+  height: 70px;
+}
+
+.login__overlay > div {
+  background: var(--White);
+  width: calc(100% - 3rem);
+  padding: 1rem;
+  border-radius: 0.25rem;
+  box-shadow: 0 0 20px 0 var(--White);
+}
+
+.login__overlay.show {
+  opacity: 1;
+  visibility: visible;
+}
+
+.login__success-text {
+  display: grid;
+  row-gap: 1rem;
+  margin-top: 0.5rem;
+  font-family: var(--Poppins);
+}
+
+.login__success-text h2 {
+  text-transform: uppercase;
+  font-size: 1.25rem;
+  border-bottom: 2px solid var(--DarkGold);
+  width: fit-content;
+}
+
+.login__success-text p {
+  font-size: 14px;
+}
+
+.login__success-text button {
+  padding: 0.75rem;
+  font-family: var(--Poppins);
+  border-radius: 0.2rem;
+  border: 2px solid var(--Dark);
+  text-transform: capitalize;
+  margin-top: 0.5rem;
+  transition: background 0.3s ease-in-out, color 0.3s ease-in-out;
+}
+
+.login__success-text button:hover {
+  background: var(--DarkGold);
+  color: var(--White);
+  border: none;
 }

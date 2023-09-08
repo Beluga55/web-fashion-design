@@ -4,6 +4,8 @@ const loginPasswordError = document.querySelector(".password-error");
 const loginButton = document.querySelector(".login-submit");
 const loginInput = document.getElementById("email-login");
 const loginPasswordInput = document.getElementById("password-login");
+const loginOverlay = document.querySelector(".login__overlay");
+const loginButtonRedirect = document.getElementById("login-button");
 
 function validateLogin(e) {
   e.preventDefault();
@@ -24,7 +26,14 @@ function validateLogin(e) {
     // Clear the input fields
     loginInput.value = "";
     loginPasswordInput.value = "";
+    loginOverlay.classList.add("show");
   }
 }
-
 loginButton.addEventListener("click", validateLogin);
+
+function redirectProduct() {
+  loginOverlay.classList.remove("show");
+  window.location.href = "../products.html";
+}
+
+loginButtonRedirect.addEventListener("click", redirectProduct);
