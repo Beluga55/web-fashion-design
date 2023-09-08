@@ -12,7 +12,8 @@
     justify-content: center;
   }
 
-  .signup__container {
+  .signup__container,
+  .login__overlay > div {
     width: 400px;
   }
 }

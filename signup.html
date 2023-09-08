@@ -30,7 +30,7 @@
           <a href="#">About</a>
           <a href="#">Products</a>
           <a href="#">FAQs</a>
-          <a href="#">Contact Us</a>
+          <a href="#contact">Contact Us</a>
           <i class="fa-solid fa-xmark"></i>
         </div>
         <div>
@@ -54,10 +54,12 @@
               <div class="signup__first-name">
                 <label>First Name</label>
                 <input type="text" placeholder="First Name">
+                <p id="first__name-error">First Name Is Required</p>
               </div>
               <div class="signup__last-name">
                 <label>Last Name</label>
                 <input type="text" placeholder="Last Name">
+                <p id="last__name-error">Last Name Is Required</p>
               </div>
             </div>
 
@@ -66,14 +68,18 @@
               <div>
                 <label>Email</label>
                 <input type="email" placeholder="Email">
+                <p id="email-error">Email Is Required</p>
               </div>
               <div>
                 <label>Password</label>
                 <input type="password" placeholder="Password">
+                <p id="password-error">Password Is Required</p>
+                <p id="password__simple-error">Uppercase Characters Required</p>
               </div>
               <div>
                 <label>Verify Password</label>
                 <input type="password" placeholder="Verify Password">
+                <p id="verify-error">Password Need To Match The Password Above</p>
               </div>
               <div>
                 <button>Signup</button>
@@ -146,5 +152,6 @@
     </footer>
 
     <script src="js/index.js"></script>
+    <script src="js/signup.js"></script>
   </body>
 </html>
