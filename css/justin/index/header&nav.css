@@ -35,7 +35,7 @@
 }
 
 .nav > div:last-child a {
-  height: 20px;
+  height: 19px;
 }
 
 .nav__logo {
@@ -47,7 +47,7 @@
 
 .nav__logo a {
   text-decoration: none;
-  font-weight: var(--Lato700);
+  font-weight: var(--Raleway600);
   color: var(--White);
   cursor: pointer;
   transition: color 0.3s ease-in-out;
@@ -86,8 +86,8 @@
 .nav__menu a {
   text-decoration: none;
   color: var(--White);
-  font-family: var(--Poppins);
-  font-weight: var(--Poppins600);
+  font-family: var(--Raleway);
+  font-weight: var(--Raleway600);
   font-size: 14px;
   transition: color 0.3s ease-in-out, border 0.3s ease-in-out;
 }

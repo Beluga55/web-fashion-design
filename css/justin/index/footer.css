@@ -30,10 +30,11 @@
 
 .footer__col p {
   color: var(--White);
-  font-family: var(--Poppins);
+  font-family: var(--Raleway);
   margin-top: 1rem;
   font-size: 14px;
   text-align: justify;
+  line-height: 1.5rem;
 }
 
 .footer__outer-row-first > div:last-child,
@@ -69,7 +70,7 @@
 
 .quick__links a {
   text-decoration: none;
-  font-family: var(--Poppins);
+  font-family: var(--Raleway);
   font-size: 14px;
   color: var(--White);
   transition: color 0.3s ease-in-out;

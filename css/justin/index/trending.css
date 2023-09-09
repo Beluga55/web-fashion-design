@@ -42,8 +42,8 @@
 
 .trending__info h4 {
   color: var(--White);
-  font-family: var(--Poppins);
-  font-weight: var(--Poppins500);
+  font-family: var(--Raleway);
+  font-weight: var(--Raleway500);
   border-bottom: 2px solid var(--White);
   width: fit-content;
   font-size: 0.836rem;
@@ -69,7 +69,7 @@
 .trending__coat-info > div p {
   color: var(--White);
   font-size: 0.75rem;
-  font-weight: var(--Poppins500);
+  font-weight: var(--Raleway500);
 }
 
 .trending__card > div:hover .trending__info {
@@ -78,15 +78,19 @@
 }
 
 .trending__card h3 {
-  margin-top: 1rem;
+  margin-top: 1.2rem;
   border-bottom: 2px solid var(--Gold);
   width: fit-content;
   border-radius: 0 0 0.1rem 0.1rem;
+  font-family: var(--Josefin);
+  text-transform: uppercase;
+  font-size: 0.938rem;
+  font-weight: 700;
 }
 
 .trending__card p {
-  font-family: var(--Poppins);
-  font-weight: var(--Poppins600);
+  font-family: var(--Josefin);
+  font-weight: 700;
   font-size: 1.25rem;
 }
 
@@ -105,14 +109,14 @@
   text-decoration: none;
   background: var(--Dark);
   color: var(--White);
-  font-family: var(--Poppins);
+  font-family: var(--Raleway);
   font-size: 12px;
   padding: 8px 0.938rem;
   border: none;
   outline: none;
   border-radius: 0.25rem;
   transition: background 0.3s ease-in-out, color 0.3s ease-in-out;
-  font-weight: var(--Poppins600);
+  font-weight: var(--Raleway600);
 }
 
 .trending__button:hover {

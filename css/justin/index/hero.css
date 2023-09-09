@@ -37,14 +37,14 @@
   background: rgba(255, 255, 255, 0.1);
   border-radius: 0.25rem;
   box-shadow: 0 0 25px 0 var(--White);
-  font-family: var(--Poppins);
+  font-family: var(--Raleway);
   text-transform: uppercase;
 }
 
 .hero__quotes p {
   margin-top: 1rem;
   color: var(--GreyLight);
-  font-family: var(--Poppins);
+  font-family: var(--Raleway);
   font-size: 14px;
   line-height: 1.75rem;
   text-align: justify;
@@ -54,9 +54,9 @@
   text-decoration: none;
   background: var(--White);
   padding: 10px 20px;
-  font-family: var(--Poppins);
+  font-family: var(--Raleway);
   font-size: 14px;
-  font-weight: var(--Poppins600);
+  font-weight: var(--Raleway600);
   color: var(--Black);
   border-radius: 0.25rem;
   transition: background 0.3s ease-in-out, color 0.3s ease-in-out;
@@ -79,11 +79,11 @@
 .hero__scroll-down a {
   position: absolute;
   transform: rotate(90deg);
-  right: -20px;
+  right: -18px;
   text-align: center;
   text-decoration: none;
   color: var(--White);
-  font-family: var(--Poppins);
+  font-family: var(--Raleway);
   font-size: 14px;
   cursor: pointer;
   bottom: 5rem;

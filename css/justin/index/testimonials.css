@@ -28,13 +28,14 @@
 }
 
 .testimonials__card h4 {
-  font-family: var(--Poppins);
+  font-family: var(--Raleway);
   text-transform: uppercase;
   text-align: center;
+  line-height: 1.5;
 }
 
 .testimonials__card p {
-  font-family: var(--Poppins);
+  font-family: var(--Raleway);
   font-size: 14px;
   text-align: justify;
   line-height: 1.65;

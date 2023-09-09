@@ -12,7 +12,7 @@
   }
 
   .nav__menu a {
-    font-weight: var(--Poppins500);
+    font-weight: var(--Raleway500);
   }
 
   .scroll-header a,
@@ -168,6 +168,11 @@
     padding: 4rem 0 4rem 2rem;
   }
 
+  .newsletter__overlay img {
+    top: 3rem;
+    left: 2rem;
+  }
+
   .newsletter__form {
     background: var(--Dark);
     border-radius: 0.2rem;
@@ -210,7 +215,7 @@
   }
 
   .newsletter__social p {
-    font-family: var(--Poppins);
+    font-family: var(--Raleway);
     font-size: 14px;
   }
 
@@ -221,7 +226,8 @@
   }
 
   .newsletter__social p:last-child {
-    font-weight: var(--Poppins600);
+    font-weight: var(--Raleway600);
+    line-height: 1.5;
   }
 
   .fa-brands {

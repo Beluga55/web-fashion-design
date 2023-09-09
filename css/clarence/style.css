@@ -4,7 +4,7 @@
 @import url(login.css);
 @import url(signup.css);
 @import url(queries.css);
-@import url("https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Poppins:wght@500;600&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@500;600;700&family=Raleway:wght@400;500;600;700&display=swap');
 
 :root {
   /* ====== COLORS ====== */
@@ -17,14 +17,14 @@
   --DarkGold: #b67d43;
 
   /* ====== FONT ====== */
-  --Lato: "Lato", sans-serif;
-  --Poppins: "Poppins", sans-serif;
+  --Raleway: "Raleway", sans-serif;
+  --Josefin: "Josefin Sans", sans-serif;
 
   /* ====== FONT WEIGHT ====== */
-  --Lato400: 400;
-  --Lato700: 700;
-  --Poppins500: 500;
-  --Poppins600: 600;
+  --Raleway400: 400;
+  --Raleway700: 700;
+  --Raleway500: 500;
+  --Raleway600: 600;
 }
 
 /* ====== RESET CSS VARIABLES ====== */
@@ -39,7 +39,7 @@ html {
 }
 
 body {
-  font-family: var(--Lato);
+  font-family: var(--Raleway);
   font-size: 1rem;
 }
 
@@ -55,7 +55,7 @@ i {
 
 .section__title,
 .section__subtitle {
-  font-family: var(--Poppins);
+  font-family: var(--Raleway);
   text-align: center;
 }
 
@@ -69,4 +69,5 @@ i {
   color: var(--Grey);
   font-size: 14px;
   padding-inline: 1rem;
+  line-height: 1.25;
 }

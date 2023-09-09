@@ -18,11 +18,13 @@
 .signup__first-name label,
 .signup__last-name label,
 .signup__content > div label {
-  font-family: var(--Poppins);
+  font-family: var(--Raleway);
   text-transform: uppercase;
   font-size: 14px;
   border-bottom: 2px solid var(--DarkGold);
   width: fit-content;
+  font-size: 14px;
+  font-weight: var(--Raleway600);
 }
 
 .signup__first-name input[type="text"],
@@ -32,7 +34,7 @@
   padding: 0.5rem 0 0.5rem 0.75rem;
   border: 2px solid var(--Black);
   border-radius: 0.2rem;
-  font-family: var(--Poppins);
+  font-family: var(--Raleway);
   font-size: 12px;
   background: var(--White);
 }
@@ -55,7 +57,7 @@
   padding: 0.5rem 0 0.5rem 0.75rem;
   border: 2px solid var(--Black);
   border-radius: 0.2rem;
-  font-family: var(--Poppins);
+  font-family: var(--Raleway);
   font-size: 12px;
   background: var(--White);
 }
@@ -63,7 +65,7 @@
 .signup__content button {
   margin-top: 0.75rem;
   background: var(--White);
-  font-weight: var(--Poppins600);
+  font-weight: var(--Raleway600);
   transition: background 0.3s ease-in-out, color 0.3s ease-in-out;
   color: var(--Black);
 }
@@ -84,7 +86,7 @@
 .signup__content > div p {
   color: Red;
   font-size: 12px;
-  font-family: var(--Poppins);
+  font-family: var(--Raleway);
   display: none;
 }
 
@@ -96,6 +98,7 @@
 #verify-error.show,
 #redirect-timer.show {
   display: block;
+  font-weight: var(--Raleway600);
 }
 
 #redirect-timer {

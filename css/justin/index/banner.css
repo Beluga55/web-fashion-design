@@ -34,19 +34,21 @@
 
 .banner__overlay h1 {
   font-size: 1.75rem;
-  font-family: var(--Poppins);
+  font-family: var(--Raleway);
   text-transform: uppercase;
   color: var(--White);
   letter-spacing: 1.5px;
+  line-height: 1.5;
 }
 
 .banner__overlay p {
   color: var(--White);
-  font-family: var(--Poppins);
+  font-family: var(--Raleway);
   font-size: 14px;
-  font-weight: var(--Poppins500);
+  font-weight: var(--Raleway500);
   margin-inline: 1.5rem;
   margin-top: 1rem;
+  line-height: 1.5;
 }
 
 .banner__overlay span {
