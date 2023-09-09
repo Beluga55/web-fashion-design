@@ -53,12 +53,12 @@
             <div>
               <div class="signup__first-name">
                 <label>First Name</label>
-                <input type="text" placeholder="First Name">
+                <input type="text" id="first__name-input" placeholder="First Name">
                 <p id="first__name-error">First Name Is Required</p>
               </div>
               <div class="signup__last-name">
                 <label>Last Name</label>
-                <input type="text" placeholder="Last Name">
+                <input type="text" id="last__name-input" placeholder="Last Name">
                 <p id="last__name-error">Last Name Is Required</p>
               </div>
             </div>
@@ -67,22 +67,23 @@
             <div class="signup__content">
               <div>
                 <label>Email</label>
-                <input type="email" placeholder="Email">
+                <input type="email" id="email__input" placeholder="Email">
                 <p id="email-error">Email Is Required</p>
               </div>
               <div>
                 <label>Password</label>
-                <input type="password" placeholder="Password">
+                <input type="password" id="password__input" placeholder="Password">
                 <p id="password-error">Password Is Required</p>
-                <p id="password__simple-error">Uppercase Characters Required</p>
+                <p id="password__simple-error">One Uppercase Characters Required</p>
               </div>
               <div>
                 <label>Verify Password</label>
-                <input type="password" placeholder="Verify Password">
-                <p id="verify-error">Password Need To Match The Password Above</p>
+                <input type="password" id="verify__password-input" placeholder="Verify Password">
+                <p id="verify-error">Password Do Not Match</p>
               </div>
               <div>
-                <button>Signup</button>
+                <button id="signup__button">Signup</button>
+                <p id="redirect-timer"></p>
               </div>
             </div>
           </div>

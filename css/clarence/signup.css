@@ -87,3 +87,17 @@
   font-family: var(--Poppins);
   display: none;
 }
+
+.signup__first-name p.show,
+.signup__last-name p.show,
+#email-error.show,
+#password-error.show,
+#password__simple-error.show,
+#verify-error.show,
+#redirect-timer.show {
+  display: block;
+}
+
+#redirect-timer {
+  text-align: center;
+}
