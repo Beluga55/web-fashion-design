@@ -25,7 +25,14 @@ function validateSignup(e) {
   const verifyValue = verifyPasswordInput.value.trim();
 
   // Clear all error messages
-  const errorElements = [firstNameError, lastNameError, emailError, passwordError, passwordSimpleError, verifyError];
+  const errorElements = [
+    firstNameError,
+    lastNameError,
+    emailError,
+    passwordError,
+    passwordSimpleError,
+    verifyError,
+  ];
   errorElements.forEach((element) => element.classList.remove("show"));
 
   // Validation
@@ -39,7 +46,8 @@ function validateSignup(e) {
 
   if (emailValue === "" || !isValidEmail(emailValue)) {
     emailError.classList.add("show");
-    emailError.textContent = emailValue === "" ? "Email is required" : "Invalid email format";
+    emailError.textContent =
+      emailValue === "" ? "Email is required" : "Invalid email format";
   }
 
   if (passwordValue === "") {
@@ -47,7 +55,9 @@ function validateSignup(e) {
   } else if (passwordValue.length < 8 || !/[A-Z]/.test(passwordValue)) {
     passwordSimpleError.classList.add("show");
     passwordSimpleError.textContent =
-      passwordValue.length < 8 ? "Password must be at least 8 characters" : "One Uppercase Character Required";
+      passwordValue.length < 8
+        ? "Password must be at least 8 characters"
+        : "One Uppercase Character Required";
   }
 
   if (verifyValue === "") {
@@ -63,13 +73,12 @@ function validateSignup(e) {
     // For example, you can reset the form and start the redirection timer.
     resetForm();
     timerElement.classList.add("show");
-    startRedirectionTimer("../login.html", 5);
+    startRedirectionTimer("login.html", 5);
   } else {
     // There are error messages, do not redirect and clear the timer
     timerElement.classList.remove("show");
   }
 }
-
 
 signupButton.addEventListener("click", validateSignup);
 
