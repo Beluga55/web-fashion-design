@@ -18,45 +18,36 @@ function validateSignup(e) {
   e.preventDefault();
 
   // Take All The Inputs
-  const firstNameValue = firstNameInput.value;
-  const lastNameValue = lastNameInput.value;
-  const emailValue = emailInput.value;
-  const passwordValue = passwordInput.value;
-  const verifyValue = verifyPasswordInput.value;
+  const firstNameValue = firstNameInput.value.trim();
+  const lastNameValue = lastNameInput.value.trim();
+  const emailValue = emailInput.value.trim();
+  const passwordValue = passwordInput.value.trim();
+  const verifyValue = verifyPasswordInput.value.trim();
 
-  // Clear any existing error messages
-  firstNameError.classList.remove("show");
-  lastNameError.classList.remove("show");
-  emailError.classList.remove("show");
-  passwordError.classList.remove("show");
-  passwordSimpleError.classList.remove("show");
-  verifyError.classList.remove("show");
+  // Clear all error messages
+  const errorElements = [firstNameError, lastNameError, emailError, passwordError, passwordSimpleError, verifyError];
+  errorElements.forEach((element) => element.classList.remove("show"));
 
-  // Logic Validation
+  // Validation
   if (firstNameValue === "") {
     firstNameError.classList.add("show");
   }
+
   if (lastNameValue === "") {
     lastNameError.classList.add("show");
   }
 
-  if (emailValue === "") {
+  if (emailValue === "" || !isValidEmail(emailValue)) {
     emailError.classList.add("show");
-  } else if (!isValidEmail(emailValue)) {
-    emailError.classList.add("show");
-    emailError.textContent = "Invalid email format";
+    emailError.textContent = emailValue === "" ? "Email is required" : "Invalid email format";
   }
 
   if (passwordValue === "") {
     passwordError.classList.add("show");
-  }
-
-  if (passwordValue.length < 8) {
+  } else if (passwordValue.length < 8 || !/[A-Z]/.test(passwordValue)) {
     passwordSimpleError.classList.add("show");
-    passwordSimpleError.textContent = "Password must be at least 8 characters";
-  } else if (!/[A-Z]/.test(passwordValue)) {
-    passwordSimpleError.classList.add("show");
-    passwordSimpleError.textContent = "One Uppercase Characters Required";
+    passwordSimpleError.textContent =
+      passwordValue.length < 8 ? "Password must be at least 8 characters" : "One Uppercase Character Required";
   }
 
   if (verifyValue === "") {
@@ -64,24 +55,21 @@ function validateSignup(e) {
     verifyError.textContent = "Please Verify Your Password";
   } else if (verifyValue !== passwordValue) {
     verifyError.classList.add("show");
-    verifyError.textContent = "Password Do Not Match";
+    verifyError.textContent = "Passwords Do Not Match";
   }
 
-  if (
-    firstNameError.textContent !== "" &&
-    lastNameError.textContent !== "" &&
-    emailError.textContent !== "" &&
-    passwordError.textContent !== "" &&
-    passwordSimpleError.textContent !== "" &&
-    verifyError.textContent !== ""
-  ) {
-    // Form is valid, you can submit the form or take other actions here
+  if (errorElements.every((element) => !element.classList.contains("show"))) {
+    // All input fields are valid, you can submit the form or take other actions here
     // For example, you can reset the form and start the redirection timer.
+    resetForm();
     timerElement.classList.add("show");
     startRedirectionTimer("../login.html", 5);
-    resetForm();
+  } else {
+    // There are error messages, do not redirect and clear the timer
+    timerElement.classList.remove("show");
   }
 }
+
 
 signupButton.addEventListener("click", validateSignup);
 
