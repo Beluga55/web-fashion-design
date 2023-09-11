@@ -70,6 +70,7 @@
   color: var(--White);
   font-size: 0.75rem;
   font-weight: var(--Raleway500);
+  font-family: var(--Raleway);
 }
 
 .trending__card > div:hover .trending__info {
@@ -78,7 +79,7 @@
 }
 
 .trending__card h3 {
-  margin-top: 1.2rem;
+  margin: 1.2rem 0 0.75rem;
   border-bottom: 2px solid var(--Gold);
   width: fit-content;
   border-radius: 0 0 0.1rem 0.1rem;
@@ -88,10 +89,22 @@
   font-weight: 700;
 }
 
-.trending__card p {
+.trending__card span {
+  font-weight: var(--Raleway600);
+  font-size: 14px;
+}
+
+.trending__price {
   font-family: var(--Josefin);
   font-weight: 700;
   font-size: 1.25rem;
+}
+
+.trending__occasions {
+  margin-top: 0.5rem;
+  font-size: 14px;
+  line-height: 1.25;
+  width: 90%;
 }
 
 .trending__card del {

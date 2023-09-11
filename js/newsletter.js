@@ -36,7 +36,7 @@ newsletterButton.addEventListener("click", validateNewsletter);
 
 function backMainMenu() {
   overlayShow.classList.remove("show");
-  window.location.href = "../index.html";
+  window.location.href = "index.html";
 }
 
 mainPageButton.addEventListener("click", backMainMenu);
