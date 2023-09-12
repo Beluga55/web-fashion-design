@@ -1,0 +1,191 @@
+@import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@500;600;700&family=Raleway:wght@400;500;600;700&display=swap");
+
+@import url("../index/header&nav.css");
+@import url(../index/queries.css);
+@import url(../index/footer.css);
+
+:root {
+  /* ====== COLORS ====== */
+  --Grey: hsl(228, 15%, 50%);
+  --GreyLight: hsl(228, 12%, 75%);
+  --Dark: hsl(228, 16%, 12%);
+  --White: #ffffff;
+  --Black: #000000;
+  --Gold: #ce9f56;
+  --DarkGold: #b67d43;
+
+  /* ====== FONT ====== */
+  --Raleway: "Raleway", sans-serif;
+  --Josefin: "Josefin Sans", sans-serif;
+
+  /* ====== FONT WEIGHT ====== */
+  --Raleway400: 400;
+  --Raleway700: 700;
+  --Raleway500: 500;
+  --Raleway600: 600;
+}
+
+/* ====== RESET CSS VARIABLES ====== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--Raleway);
+  font-size: 1rem;
+}
+
+i {
+  font-size: 1rem;
+}
+
+/* ====== REUSABLE CSS STYLES ====== */
+.container {
+  max-width: 1024px;
+  margin-inline: auto;
+}
+
+.section__padding {
+  margin-inline: 1.5rem;
+  padding: 4.5rem 0;
+}
+
+.section__title,
+.section__subtitle {
+  font-family: var(--Raleway);
+  text-align: center;
+}
+
+.section__title {
+  font-size: 1.7rem;
+  font-weight: var(--Raleway700);
+  text-transform: uppercase;
+}
+
+.section__subtitle {
+  margin-top: 0.5rem;
+  color: var(--Grey);
+  font-size: 14px;
+  padding-inline: 1rem;
+  line-height: 1.25rem;
+}
+
+/*---------------------Headings---------------------*/
+.header i {
+  color: var(--Black);
+}
+
+.nav__logo a {
+  color: var(--Black);
+}
+
+.nav__menu a {
+  color: var(--Black);
+}
+
+.container {
+  margin-inline: auto;
+}
+
+/*--------------------- PRODUCTS ---------------------*/
+.products__container {
+  margin-top: 7.5rem;
+}
+
+.products__selection {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 2rem 1.5rem;
+}
+
+.products__selection > div {
+  width: 400px;
+  display: flex;
+  column-gap: 0.5rem;
+}
+
+.products__selection > div button {
+  padding: 0.5rem;
+  width: 100%;
+  background: transparent;
+  border-radius: 0.2rem;
+  border: 2px solid rgba(45, 45, 45, 0.5);
+  box-shadow: 0 0 10px 0 rgba(45, 45, 45, 0.5);
+  font-family: var(--Raleway);
+  font-weight: var(--Raleway600);
+  transition: background 0.3s ease-in-out, color 0.3s ease-in-out;
+  color: var(--Black);
+}
+
+.products__selection > div button:hover {
+  background: var(--DarkGold);
+  color: var(--White);
+}
+
+.products__selection > div button.active__button {
+  background: var(--DarkGold);
+  color: var(--White);
+}
+
+.products__grid {
+  margin: 2.5rem 1.5rem 0;
+}
+
+.products__column {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  column-gap: 1rem;
+}
+
+.products__column > div {
+  margin-bottom: 1rem;
+}
+
+.products__column p,
+.products__column span {
+  margin: 0.5rem 0 0.1rem;
+  font-size: 13px;
+  font-weight: var(--Raleway600);
+}
+
+.products__column img {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+  object-position: top;
+  margin-bottom: -5px;
+  border-radius: 0.25rem;
+  border: 1px solid rgba(45, 45, 45, 0.5);
+}
+
+@media screen and (min-width: 576px) {
+  .products__column {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .nav__menu a,
+  .nav__logo a,
+  .nav__logo i,
+  .header i {
+    color: var(--White);
+  }
+}
+
+@media screen and (min-width: 800px) {
+  .products__column {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+@media screen and (min-width: 900px) {
+  .products__column {
+    grid-template-columns: repeat(5, 1fr);
+  }
+}

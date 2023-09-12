@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="icon" href="images/favicon.ico" type="image/x-icon" />
+
+    <!-- ======== FONT AWESOME ======== -->
+    <script
+      src="https://kit.fontawesome.com/21bf2f8b90.js"
+      crossorigin="anonymous"
+    ></script>
+
+    <!--=============== BOXICONS ===============-->
+    <link
+      href="https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+    <!-- ======== CSS ======== -->
+    <link rel="stylesheet" href="css/justin/product/product.css" />
+    <title>Castellan</title>
+  </head>
+  <body>
+    <!-- ======== HEADER & NAV ======== -->
+    <header class="header">
+      <nav class="nav container">
+        <div class="nav__logo">
+          <a href="index.html">Castellan</a>
+          <i class="fa-solid fa-user-secret"></i>
+        </div>
+        <!-- ======== NAVIGATION MENU ======== -->
+        <div class="nav__menu hide">
+          <a href="index.html">Home</a>
+          <a href="about.html">About</a>
+          <a href="products.html">Products</a>
+          <a href="#">FAQs</a>
+          <a href="#contact">Contact Us</a>
+          <i class="fa-solid fa-xmark"></i>
+        </div>
+        <div>
+          <i class="fa-solid fa-bars"></i>
+          <a href="login.html"
+            ><i class="fa-solid fa-arrow-right-to-bracket"></i
+          ></a>
+        </div>
+      </nav>
+    </header>
+
+    <main>
+      <section>
+        <div class="products__container container">
+          <h2 class="section__title">Products</h2>
+          <p class="section__subtitle">Your Source for High-Quality Products</p>
+
+          <!-- Products Selection -->
+          <div class="products__selection">
+            <div>
+              <button class="button active__button" data-filter="all">All</button>
+              <button class="button" data-filter="coat">Coat</button>
+              <button class="button" data-filter="tie">Tie</button>
+              <button class="button" data-filter="trousers">Trousers</button>
+            </div>
+          </div>
+
+          <!-- All Products Here -->
+          <div class="products__grid">
+            <div class="products__column">
+              <div class="coat__div">
+                <img src="images/coat1.jpg" alt="coat-1" />
+                <p>Tuxedo Jacket</p>
+                <span>$200</span>
+              </div>
+              <div class="coat__div">
+                <img src="images/coats2.jpg" alt="coat-2" />
+                <p>Bomber Jacket</p>
+                <span>$150</span>
+              </div>
+              <div class="coat__div">
+                <img src="images/coat3.jpg" alt="coat-3" />
+                <p>Casual Coat</p>
+                <span>$120</span>
+              </div>
+              <div class="coat__div">
+                <img src="images/coat4.jpg" alt="coat-4" />
+                <p>Blazer</p>
+                <span>$175</span>
+              </div>
+
+              <div class="coat__div">
+                <img src="images/coat5.jpg" alt="coat-5" />
+                <p>Sports Coat</p>
+                <span>$200</span>
+              </div>
+              <div class="coat__div">
+                <img src="images/coat6.jpg" alt="coat-6" />
+                <p>Long Coat</p>
+                <span>$225</span>
+              </div>
+
+              <div class="coat__div">
+                <img src="images/coat7.jpg" alt="coat-7" />
+                <p>Pea Coat</p>
+                <span>$165</span>
+              </div>
+              <div class="coat__div">
+                <img src="images/coat8.jpg" alt="coat-8" />
+                <p>Trench Coat</p>
+                <span>$270</span>
+              </div>
+
+              <!-- Tie -->
+              <div class="tie__div">
+                <img src="images/tie-1.jpg" alt="tie1" />
+                <p>Blue Paisley Tie</p>
+                <span>$20</span>
+              </div>
+              <div class="tie__div">
+                <img src="images/tie2.jpg" alt="tie2" />
+                <p>Classic Paisley Tie</p>
+                <span>$25</span>
+              </div>
+              <div class="tie__div">
+                <img src="images/tie3.jpg" alt="tie3" />
+                <p>Green Paisley Tie</p>
+                <span>$15</span>
+              </div>
+              <div class="tie__div">
+                <img src="images/tie4.jpg" alt="tie4" />
+                <p>Brown Paisley Tie</p>
+                <span>$20</span>
+              </div>
+              <div class="tie__div">
+                <img src="images/tie5.jpg" alt="tie5" />
+                <p>Teal Green Paisley Tie</p>
+                <span>$18</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <script src="js/index.js"></script>
+    <script src="js/product.js"></script>
+  </body>
+</html>
