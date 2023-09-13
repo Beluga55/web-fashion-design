@@ -25,4 +25,3 @@ if (close) {
     navMenu.classList.add("hide");
   });
 }
-

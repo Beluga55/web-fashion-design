@@ -96,6 +96,7 @@
           <!-- ======== SWIPER ======== -->
           <div class="swiper trending__swiper">
             <div class="swiper-wrapper">
+              <!-- First Slide -->
               <div class="swiper-slide trending__card">
                 <div>
                   <img src="images/coat1.jpg" alt="coat-1" />
@@ -133,6 +134,8 @@
                   </div>
                 </div>
               </div>
+
+              <!-- Second Slide -->
               <div class="swiper-slide trending__card">
                 <div>
                   <img src="images/coats2.jpg" alt="coat-2" />
@@ -400,6 +403,46 @@
             </div>
             <div class="swiper-button-prev">
               <i class="bx bx-chevron-left"></i>
+            </div>
+          </div>
+
+          <!-- WHEN CLICKED ADD TO CART THEN SHOW MORE DESCRIPTION -->
+          <div class="add__cart-overlay">
+            <div>
+              <div>
+                <i class="fa-solid fa-arrow-left" id="arrow-left"></i>
+                <img src="images/coat1.jpg" alt="coat-1" />
+              </div>
+
+              <div class="add__cart-content">
+                <h3>Tuxedo Jacket</h3>
+                <div>
+                  <span>Description</span>
+                  <p>Worn for black-tie events and formal occasions</p>
+                </div>
+                <div>
+                  <span>Color</span>
+                  <div class="color">
+                    <div>
+                      <div class="casual__brown"></div>
+                    </div>
+                  </div>
+                </div>
+                <div>
+                  <span>Size</span>
+                  <div class="size__selection">
+                    <span class="active__size">S</span>
+                    <span>M</span>
+                    <span>L</span>
+                    <span>XL</span>
+                    <span>XXL</span>
+                  </div>
+                </div>
+                <div>
+                  <p>$200</p>
+                  <button>Add To Cart</button>
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -723,6 +766,7 @@
 
     <!-- ======== JAVASCRIPT ======== -->
     <script src="js/index.js"></script>
+    <script src="js/product-overlay.js"></script>
     <script src="js/swiper.js"></script>
     <script src="js/newsletter.js"></script>
   </body>

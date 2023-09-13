@@ -135,7 +135,7 @@ i {
 }
 
 .products__grid {
-  margin: 2.5rem 1.5rem 0;
+  margin: 2.5rem 1.5rem;
 }
 
 .products__column {
@@ -175,6 +175,24 @@ i {
   .nav__logo i,
   .header i {
     color: var(--White);
+  }
+}
+
+@media screen and (min-width: 576px) {
+  .footer__outer-row-first > div:last-child,
+  .footer__outer-row-second > div:first-child,
+  .footer__outer-row-second > div:last-child {
+    margin-top: 0;
+  }
+
+  .footer__outer-row-second {
+    margin-top: 1rem;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .footer__outer-row-second {
+    margin-top: 0;
   }
 }
 
