@@ -3,12 +3,8 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <!------------[Favicon]--------------->
-    <link rel="icon" type="image/x-icon" href="images/favicon.ico" />
-
-    <!------------[CSS Link]-------------->
-    <link rel="stylesheet" href="css/clarence/style.css" />
-    <title>My Account</title>
+    \
+    <link rel="icon" href="images/favicon.ico" type="image/x-icon" />
 
     <!-- ======== FONT AWESOME ======== -->
     <script
@@ -16,13 +12,19 @@
       crossorigin="anonymous"
     ></script>
 
+    <!--=============== BOXICONS ===============-->
     <link
       href="https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css"
       rel="stylesheet"
     />
+
+    <!-- ======== CSS ======== -->
+    <link rel="stylesheet" href="css/justin/style.css" />
+
+    <title>Castellan</title>
   </head>
   <body>
-    <!-----------------------------[Header]---------------------------->
+    <!-- ======== HEADER & NAV ======== -->
     <header class="header">
       <nav class="nav container">
         <div class="nav__logo">
@@ -32,7 +34,7 @@
         <!-- ======== NAVIGATION MENU ======== -->
         <div class="nav__menu hide">
           <a href="index.html">Home</a>
-          <a href="#">About</a>
+          <a href="about.html">About</a>
           <a href="products.html">Products</a>
           <a href="#">FAQs</a>
           <a href="#contact">Contact Us</a>
@@ -50,61 +52,6 @@
         </div>
       </nav>
     </header>
-
-    <!------------------------[Log in Section]------------------------->
-    <main>
-      <section>
-        <div class="login__container">
-          <h2 class="section__title">Login</h2>
-          <p class="section__subtitle">
-            Login to get amazing discounts and perks.
-          </p>
-
-          <!-- Login Form -->
-          <form action="#" class="form">
-            <div class="login__form">
-              <div>
-                <label>Email</label>
-                <input
-                  type="email"
-                  id="email-login"
-                  placeholder="Enter Your Email"
-                />
-                <p class="email-error">Email is required</p>
-              </div>
-              <div>
-                <label>Password</label>
-                <input
-                  type="password"
-                  id="password-login"
-                  placeholder="Enter Your Password"
-                />
-                <p class="password-error">Password is required</p>
-              </div>
-              <div>
-                <input type="submit" class="login-submit" value="Login" />
-                <img src="images/curved-arrow.svg" alt="curved-arrow" />
-              </div>
-              <div>
-                <span>Doesn't have an account?</span>
-                <div class="horizontal__line"></div>
-                <a href="signup.html">Sign Up</a>
-              </div>
-            </div>
-          </form>
-          <div class="login__overlay">
-            <div>
-              <img src="images/check.svg" alt="check.svg" />
-              <div class="login__success-text">
-                <h2>Successfully Login</h2>
-                <p>Discover our latest products by clicking the button below</p>
-                <button id="login-button">Redirect To Products Page</button>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-    </main>
 
     <!-- ======== FOOTER ======== -->
     <footer class="footer" id="contact">
@@ -167,8 +114,8 @@
       </div>
     </footer>
 
+    <!-- ======== JAVASCRIPT ======== -->
     <script src="js/index.js"></script>
-    <script src="js/login.js"></script>
     <script src="js/product-overlay.js"></script>
   </body>
 </html>

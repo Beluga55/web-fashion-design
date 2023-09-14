@@ -29,7 +29,7 @@ const itemContents = [
   {
     name: "Blazer",
     description: "Suitable for both casual and semi-formal events",
-    color: '<div class="casual__blue"></div><div class="casual__black"></div>',
+    color: '<div class="casual__blue"></div>',
     price: "$175",
     image: "images/coat4.jpg",
   },
@@ -114,14 +114,14 @@ const productsContent = [
     name: "Black Trousers",
     description:
       "A staple in any wardrobe, black trousers are versatile and suitable for various occasions.",
-    color: "Based On The Image",
+    color: "<div class='casual__black'></div>",
     price: "$55",
     image: "images/trousers1.jpg",
   },
   {
     name: "Dark Gray Trousers",
     description: "Dark gray trousers offer a refined and subdued look.",
-    color: "Based On The Image",
+    color: "<div class='casual__dark'></div>",
     price: "$60",
     image: "images/trousers2.jpg",
   },
@@ -129,25 +129,67 @@ const productsContent = [
     name: "Gray Trousers",
     description:
       "These gray trousers strike a balance between formal and casual.",
-    color: "Based On The Image",
+    color: "<div class='casual__lightgray'></div>",
     price: "$40",
     image: "images/trousers3.jpg",
   },
   {
     name: "Blue Trousers",
     description: "Add a pop of color to your wardrobe with blue trousers.",
-    color: "Based On The Image",
+    color: "<div class='casual__blue'></div>",
     price: "$58",
     image: "images/trousers4.jpg",
   },
   {
     name: "Casual Trousers",
     description: "Casual trousers are all about comfort and relaxation.",
-    color: "Based On The Image",
+    color: "<div class='casual__white'></div>",
     price: "$50",
     image: "images/trousers5.jpg",
   },
 ];
+
+// Define a variable to track the currently displayed product index
+let currentProductIndex = null;
+let cartData = {
+  items: [],
+};
+
+function addToCart(productIndex) {
+  // Get the product details
+  const itemContent = productsContent[productIndex];
+
+  // Create an object with product details
+  const product = {
+    image: itemContent.image,
+    name: itemContent.name,
+    color: itemContent.color,
+    price: itemContent.price,
+  };
+
+  // Add the product to the cart
+  cartData.items.push(product);
+
+  // Store the updated cart data in localStorage
+  localStorage.setItem("cart", JSON.stringify(cartData));
+
+  // Update cart quantity display
+  const countQuantity = document.querySelector(".count__quantity");
+  countQuantity.textContent = cartData.items.length;
+}
+
+// Function to update cart quantity on page load
+function updateCartQuantity() {
+  // Retrieve cart data from localStorage
+  const cartDataJSON = localStorage.getItem("cart");
+  if (cartDataJSON) {
+    cartData = JSON.parse(cartDataJSON);
+    // Update cart quantity display
+    const countQuantity = document.querySelector(".count__quantity");
+    countQuantity.textContent = cartData.items.length;
+  }
+  console.log(cartDataJSON);
+}
 
 trendingBtn.forEach((button, index) => {
   button.addEventListener("click", () => {
@@ -156,11 +198,14 @@ trendingBtn.forEach((button, index) => {
     body.classList.add("scroll-lock");
 
     const itemContent = itemContents[index];
+    currentProductIndex = index;
 
     const newContent = `
       <div>
         <div>
+        <div class="arrow__border">
           <i class="fa-solid fa-arrow-left" id="arrow-left"></i>
+        </div>
           <img src="${itemContent.image}" alt="${itemContent.name}" />
         </div>
 
@@ -173,7 +218,7 @@ trendingBtn.forEach((button, index) => {
         <div>
           <span>Color</span>
           <div class="color">
-            <div>
+            <div class="active__color">
               ${itemContent.color}
             </div>
           </div>
@@ -190,7 +235,7 @@ trendingBtn.forEach((button, index) => {
         </div>
         <div>
           <p>${itemContent.price}</p>
-          <button>Add To Cart</button>
+          <button id="add-to-cart-button">Add To Cart</button>
         </div>
       </div>
       </div>
@@ -207,6 +252,7 @@ productCart.forEach((button, index) => {
     body.classList.add("scroll-lock");
 
     const productItem = productsContent[index];
+    currentProductIndex = index;
     let newProduct;
 
     const filter = button.getAttribute("data-filter");
@@ -215,7 +261,9 @@ productCart.forEach((button, index) => {
         newProduct = `
         <div>
         <div>
+        <div class="arrow__border">
           <i class="fa-solid fa-arrow-left" id="arrow-left"></i>
+        </div>
           <img src="${productItem.image}" alt="${productItem.name}" />
         </div>
 
@@ -235,7 +283,7 @@ productCart.forEach((button, index) => {
           </div>
           <div>
             <p>${productItem.price}</p>
-            <button>Add To Cart</button>
+            <button id="add-to-cart-button">Add To Cart</button>
           </div>
         </div>
       </div>
@@ -244,7 +292,9 @@ productCart.forEach((button, index) => {
         newProduct = `
         <div>
         <div>
+        <div class="arrow__border">
           <i class="fa-solid fa-arrow-left" id="arrow-left"></i>
+        </div>
           <img src="${productItem.image}" alt="${productItem.name}" />
         </div>
 
@@ -257,7 +307,7 @@ productCart.forEach((button, index) => {
         <div>
           <span>Color</span>
           <div class="color">
-            <div>
+            <div class="active__color">
               ${productItem.color}
             </div>
           </div>
@@ -274,7 +324,7 @@ productCart.forEach((button, index) => {
         </div>
         <div>
           <p>${productItem.price}</p>
-          <button>Add To Cart</button>
+          <button id="add-to-cart-button">Add To Cart</button>
         </div>
       </div>
       </div>
@@ -291,4 +341,16 @@ document.addEventListener("click", (event) => {
     trendingOverlay.classList.remove("show");
     body.classList.remove("scroll-lock");
   }
+
+  if (event.target.id === "add-to-cart-button") {
+    event.preventDefault();
+
+    if (currentProductIndex !== null) {
+      // Add the current product to the cart
+      addToCart(currentProductIndex);
+    }
+  }
 });
+
+// Update cart quantity on page load
+updateCartQuantity();
