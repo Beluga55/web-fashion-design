@@ -223,6 +223,10 @@
   left: 20px;
   font-size: 1.25rem;
   color: var(--Black);
+  background: var(--White);
+  padding: 0.5rem;
+  border-radius: 50%;
+  border: 2px solid var(--Black);
 }
 
 .add__cart-content > div:last-child {

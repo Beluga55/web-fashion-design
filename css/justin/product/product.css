@@ -1,8 +1,9 @@
 @import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@500;600;700&family=Raleway:wght@400;500;600;700&display=swap");
 
-@import url("../index/header&nav.css");
-@import url(../index/queries.css);
+@import url(../index/header&nav.css);
 @import url(../index/footer.css);
+@import url(../index/trending.css);
+@import url(../index/queries.css);
 
 :root {
   /* ====== COLORS ====== */
@@ -148,10 +149,15 @@ i {
   margin-bottom: 1rem;
 }
 
-.products__column p,
-.products__column span {
+.products__column p {
   margin: 0.5rem 0 0.1rem;
   font-size: 13px;
+  font-weight: var(--Raleway600);
+}
+
+.products__column span {
+  margin: 0.5rem 0 0.1rem;
+  font-size: 0.9rem;
   font-weight: var(--Raleway600);
 }
 
@@ -163,6 +169,19 @@ i {
   margin-bottom: -5px;
   border-radius: 0.25rem;
   border: 1px solid rgba(45, 45, 45, 0.5);
+}
+
+.coat__div > div,
+.tie__div > div,
+.trousers__div > div {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.products__cart {
+  margin: 0.5rem 0 0.1rem;
+  font-size: 1.2rem;
 }
 
 @media screen and (min-width: 576px) {
