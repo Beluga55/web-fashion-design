@@ -155,27 +155,55 @@ let cartData = {
   items: [],
 };
 
-function addToCart(productIndex) {
+function addToCart(productIndex, size) {
   // Get the product details
   const itemContent = productsContent[productIndex];
 
-  // Create an object with product details
-  const product = {
-    image: itemContent.image,
-    name: itemContent.name,
-    color: itemContent.color,
-    price: itemContent.price,
-  };
+  // Check if the product already exists in the cart
+  const existingProduct = cartData.items.find((item) => {
+    // Compare name, color, and size (or check for items without size)
+    if (item.name === itemContent.name && item.color === itemContent.color) {
+      if (
+        (item.size === size && size !== "") || // Check if sizes match
+        (!item.size && !size) // Handle items without sizes
+      ) {
+        return true; // Product with the same attributes already exists
+      }
+    }
+    return false;
+  });
 
-  // Add the product to the cart
-  cartData.items.push(product);
+  if (existingProduct) {
+    // If the product already exists, increment the quantity
+    existingProduct.quantity += 1;
+  } else {
+    // If not, create a new object and add it to the cart
+    const product = {
+      image: itemContent.image,
+      name: itemContent.name,
+      color: itemContent.color,
+      price: itemContent.price,
+      quantity: 1, // Initialize quantity to 1 for new items
+    };
+
+    // Add size only if it's provided and not an empty string
+    if (size !== undefined && size !== "") {
+      product.size = size;
+    }
+
+    // Add the product to the cart
+    cartData.items.push(product);
+  }
 
   // Store the updated cart data in localStorage
   localStorage.setItem("cart", JSON.stringify(cartData));
 
   // Update cart quantity display
   const countQuantity = document.querySelector(".count__quantity");
-  countQuantity.textContent = cartData.items.length;
+  countQuantity.textContent = cartData.items.reduce(
+    (total, item) => total + item.quantity,
+    0
+  );
 }
 
 // Function to update cart quantity on page load
@@ -186,7 +214,11 @@ function updateCartQuantity() {
     cartData = JSON.parse(cartDataJSON);
     // Update cart quantity display
     const countQuantity = document.querySelector(".count__quantity");
-    countQuantity.textContent = cartData.items.length;
+    countQuantity.textContent = cartData.items.reduce(
+      (total, item) => total + item.quantity,
+      0
+    );
+    // Cart Data Items Length
   }
   console.log(cartDataJSON);
 }
@@ -226,11 +258,11 @@ trendingBtn.forEach((button, index) => {
         <div>
           <span>Size</span>
           <div class="size__selection">
-            <span class="active__size">S</span>
-            <span>M</span>
-            <span>L</span>
-            <span>XL</span>
-            <span>XXL</span>
+            <span class="size__button active__size">S</span>
+            <span class="size__button">M</span>
+            <span class="size__button">L</span>
+            <span class="size__button">XL</span>
+            <span class="size__button">XXL</span>
           </div>
         </div>
         <div>
@@ -315,11 +347,11 @@ productCart.forEach((button, index) => {
         <div>
           <span>Size</span>
           <div class="size__selection">
-            <span class="active__size">S</span>
-            <span>M</span>
-            <span>L</span>
-            <span>XL</span>
-            <span>XXL</span>
+            <span class="size__button active__size">S</span>
+            <span class="size__button">M</span>
+            <span class="size__button">L</span>
+            <span class="size__button">XL</span>
+            <span class="size__button">XXL</span>
           </div>
         </div>
         <div>
@@ -346,9 +378,28 @@ document.addEventListener("click", (event) => {
     event.preventDefault();
 
     if (currentProductIndex !== null) {
-      // Add the current product to the cart
-      addToCart(currentProductIndex);
+      // Get the selected size with the active__size class
+      const selectedSizeElement = document.querySelector(
+        ".size__button.active__size"
+      );
+
+      // Check if selectedSizeElement is found, and get the selected size or set it to an empty string
+      const selectedSize = selectedSizeElement
+        ? selectedSizeElement.textContent
+        : "";
+
+      addToCart(currentProductIndex, selectedSize);
     }
+  }
+
+  if (event.target.classList.contains("size__button")) {
+    const allSizeItems = document.querySelectorAll(".size__button");
+
+    allSizeItems.forEach((sizeButton) => {
+      sizeButton.classList.remove("active__size");
+    });
+
+    event.target.classList.add("active__size");
   }
 });
 
