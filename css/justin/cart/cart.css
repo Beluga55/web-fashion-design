@@ -1,0 +1,206 @@
+@import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@500;600;700&family=Raleway:wght@400;500;600;700&display=swap");
+
+@import url(../index/header&nav.css);
+@import url(../index/trending.css);
+@import url(../index/queries.css);
+@import url(../index/footer.css);
+
+:root {
+  /* ====== COLORS ====== */
+  --Grey: hsl(228, 15%, 50%);
+  --GreyLight: hsl(228, 12%, 75%);
+  --Dark: hsl(228, 16%, 12%);
+  --White: #ffffff;
+  --Black: #000000;
+  --Gold: #ce9f56;
+  --DarkGold: #b67d43;
+
+  /* ====== FONT ====== */
+  --Raleway: "Raleway", sans-serif;
+  --Josefin: "Josefin Sans", sans-serif;
+
+  /* ====== FONT WEIGHT ====== */
+  --Raleway400: 400;
+  --Raleway700: 700;
+  --Raleway500: 500;
+  --Raleway600: 600;
+}
+
+/* ====== RESET CSS VARIABLES ====== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--Raleway);
+  font-size: 1rem;
+}
+
+i {
+  font-size: 1rem;
+}
+
+/* ====== REUSABLE CSS STYLES ====== */
+.container {
+  max-width: 1024px;
+  margin-inline: auto;
+}
+
+.section__padding {
+  margin-inline: 1.5rem;
+  padding: 4.5rem 0;
+}
+
+.section__title,
+.section__subtitle {
+  font-family: var(--Raleway);
+  text-align: center;
+}
+
+.section__title {
+  font-size: 1.7rem;
+  font-weight: var(--Raleway700);
+  text-transform: uppercase;
+}
+
+.section__subtitle {
+  margin-top: 0.5rem;
+  color: var(--Grey);
+  font-size: 14px;
+  padding-inline: 1rem;
+  line-height: 1.25rem;
+}
+
+/*---------------------Headings---------------------*/
+.header i {
+  color: var(--Black);
+}
+
+.nav__logo a {
+  color: var(--Black);
+}
+
+.nav__menu a {
+  color: var(--Black);
+}
+
+.container {
+  margin-inline: auto;
+}
+
+/*--------------------- CART ---------------------*/
+.cart__container {
+  margin-top: 7.5rem;
+  margin-bottom: 5rem;
+}
+
+.cart__content {
+  margin-top: 1rem;
+  margin-inline: 1.5rem;
+  border: 2px solid var(--Dark);
+  padding: 1rem;
+  border-radius: 0.25rem;
+}
+
+.cart__item > div {
+  display: flex;
+  align-items: center;
+  column-gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.cart__item img {
+  width: 100px;
+  height: 180px;
+  object-fit: cover;
+  object-position: top;
+  border-radius: 0.25rem;
+}
+
+.cart__product-description h3 {
+  font-family: var(--Josefin);
+  text-transform: uppercase;
+  font-size: 14px;
+}
+
+.cart__cta {
+  align-items: center;
+  justify-content: space-between;
+  column-gap: 0;
+}
+
+.cart__cta h3 {
+  font-size: 1.1rem;
+}
+
+.cart__buttons {
+  display: flex;
+  align-items: center;
+  column-gap: 0.5rem;
+}
+
+.cart__product-description p {
+  font-size: 12px;
+  margin: 0.5rem 0;
+  font-weight: var(--Raleway600);
+}
+
+.cart__product-description span {
+  font-size: 13px;
+  font-weight: var(--Raleway700);
+  border-bottom: 2px solid var(--DarkGold);
+}
+
+.cart__product-description > div {
+  margin-top: 0.5rem;
+  display: flex;
+  column-gap: 2rem;
+}
+
+.empty__text {
+  font-weight: var(--Raleway600);
+  text-align: center;
+}
+
+.cart__pricing {
+  font-size: 1rem;
+}
+
+.active__color > div {
+  margin-top: 0.5rem;
+}
+
+.decrement-button,
+.increment-button {
+  width: 25px;
+  height: 25px;
+  font-family: var(--Raleway);
+  font-weight: var(--Raleway700);
+  font-size: 16px;
+  border: 1px solid var(--Black);
+  background: var(--White);
+  color: var(--Black);
+  border-radius: 0.2rem;
+  transition: background 0.3s ease-in-out, color 0.3s ease-in-out;
+}
+
+.decrement-button:hover,
+.increment-button:hover {
+  background: var(--DarkGold);
+  color: var(--White);
+}
+
+@media screen and (min-width: 576px) {
+  .nav__menu a,
+  .nav__logo a,
+  .nav__logo i,
+  .header i {
+    color: var(--White);
+  }
+}

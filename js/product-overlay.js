@@ -76,7 +76,7 @@ const productsContent = [
     name: "Blue Paisley Tie",
     description:
       "Elevate your formal attire with this elegant blue paisley tie",
-    color: "Based On The Image",
+    color: "<p>Based On The Image</p>",
     price: "$20",
     image: "images/tie-1.jpg",
   },
@@ -84,21 +84,21 @@ const productsContent = [
     name: "Classic Paisley Tie",
     description:
       "Its versatile design complements both formal and semi-formal attire.",
-    color: "Based On The Image",
+    color: "<p>Based On The Image</p>",
     price: "$25",
     image: "images/tie2.jpg",
   },
   {
     name: "Green Paisley Tie",
     description: "Make a bold statement with this green paisley tie.",
-    color: "Based On The Image",
+    color: "<p>Based On The Image</p>",
     price: "$15",
     image: "images/tie3.jpg",
   },
   {
     name: "Brown Paisley Tie",
     description: "This brown paisley tie exudes warmth and style.",
-    color: "Based On The Image",
+    color: "<p>Based On The Image</p>",
     price: "$20",
     image: "images/tie4.jpg",
   },
@@ -106,7 +106,7 @@ const productsContent = [
     name: "Teal Green Paisley Tie",
     description:
       "The teal green paisley tie combines elegance with a hint of uniqueness.",
-    color: "Based On The Image",
+    color: "<p>Based On The Image</p>",
     price: "$18",
     image: "images/tie5.jpg",
   },
@@ -180,6 +180,7 @@ function addToCart(productIndex, size) {
     // If not, create a new object and add it to the cart
     const product = {
       image: itemContent.image,
+      description: itemContent.description,
       name: itemContent.name,
       color: itemContent.color,
       price: itemContent.price,
