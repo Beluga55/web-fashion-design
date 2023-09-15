@@ -154,11 +154,6 @@ function incrementCartItem(index) {
   }
 }
 
-// Call the function to display "There is no items in the cart" on page load
-if (countQuantity.textContent === "0") {
-  displayEmptyCartMessage();
-}
-
 // Call the function to display cart items when the page loads
 displayCartItems();
 
