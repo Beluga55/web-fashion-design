@@ -221,7 +221,6 @@ function updateCartQuantity() {
     );
     // Cart Data Items Length
   }
-  console.log(cartDataJSON);
 }
 
 trendingBtn.forEach((button, index) => {
@@ -391,6 +390,8 @@ document.addEventListener("click", (event) => {
 
       addToCart(currentProductIndex, selectedSize);
     }
+
+    trendingOverlay.classList.remove("show");
   }
 
   if (event.target.classList.contains("size__button")) {

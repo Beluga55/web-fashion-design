@@ -1,16 +1,44 @@
 // Get a reference to the container where you want to display cart items
 const cartContainer = document.querySelector(".cart__content");
 const countQuantity = document.querySelector(".count__quantity");
+const redirectBtn = document.querySelector(".redirect__product-btn");
 
 // Function to display "There is no items in the cart" message
 function displayEmptyCartMessage() {
   // Clear the existing content of cartContainer
   cartContainer.innerHTML = "";
+  cartContainer.style.display = "block";
+
+  const outerdiv = document.createElement("div");
+
+  const imageDiv = document.createElement("div");
+  imageDiv.style.display = "flex";
+  imageDiv.style.alignItems = "center";
+  imageDiv.style.justifyContent = "center";
+  imageDiv.style.marginBottom = "1rem";
+
+  const emptyCartImage = document.createElement("img");
+  emptyCartImage.classList.add("empty__cart-image");
+  emptyCartImage.src = "images/empty-cart.svg";
+  emptyCartImage.alt = "empty-cart";
 
   const emptyElement = document.createElement("p");
   emptyElement.classList.add("empty__text");
-  emptyElement.textContent = "There is no items in the cart.";
-  cartContainer.appendChild(emptyElement);
+  emptyElement.textContent = "Oops, Your Shopping Cart Is Empty";
+
+  const buttonDiv = document.createElement("div");
+  buttonDiv.classList.add("button-wrapper");
+
+  const redirectProduct = document.createElement("button");
+  redirectProduct.classList.add("redirect__product-btn");
+  redirectProduct.textContent = "Discover Our Products";
+
+  cartContainer.appendChild(imageDiv);
+  imageDiv.appendChild(emptyCartImage);
+  cartContainer.appendChild(outerdiv);
+  outerdiv.appendChild(emptyElement);
+  outerdiv.appendChild(buttonDiv);
+  buttonDiv.appendChild(redirectProduct);
 }
 
 function displayCartItems() {
@@ -153,6 +181,14 @@ function incrementCartItem(index) {
     displayCartItems();
   }
 }
+
+// Event delegation for the redirect button
+document.addEventListener("click", (event) => {
+  if (event.target.classList.contains("redirect__product-btn")) {
+    // Handle the button click here
+    window.location.href = "products.html";
+  }
+});
 
 // Call the function to display cart items when the page loads
 displayCartItems();
