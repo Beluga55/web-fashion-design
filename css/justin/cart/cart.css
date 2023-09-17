@@ -234,6 +234,32 @@ i {
   height: 50px;
 }
 
+.cart__total-price {
+  font-weight: var(--Raleway700);
+  font-size: 1rem;
+}
+
+.cart__checkout-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.cart__checkout-button {
+  padding: 0.5rem 1rem;
+  font-family: var(--Raleway);
+  font-weight: var(--Raleway700);
+  background: none;
+  border: 1px solid var(--Dark);
+  border-radius: 0.2rem;
+  transition: color 0.3s ease-in-out, background 0.3s ease-in-out;
+}
+
+.cart__checkout-button:hover {
+  color: var(--White);
+  background: var(--DarkGold);
+}
+
 @media screen and (min-width: 576px) {
   .nav__menu a,
   .nav__logo a,

@@ -45,11 +45,18 @@ function displayCartItems() {
   // Get the cart items from localStorage
   const cartDataJSON = localStorage.getItem("cart");
   if (cartDataJSON) {
-    const cartData = JSON.parse(cartDataJSON);
-    const cartItems = cartData.items;
+    const cartItems = JSON.parse(cartDataJSON).items; // Parse items directly
+
+    // Get the checked status of all checkboxes before clearing cartContainer
+    const checkedStatus = Array.from(
+      document.querySelectorAll(".cart__checkbox")
+    ).map((checkbox) => checkbox.checked);
 
     // Clear the existing content of cartContainer
     cartContainer.innerHTML = "";
+
+    // Initialize the total price
+    let totalPrice = 0;
 
     // Loop through the cart items and create HTML elements for each item
     cartItems.forEach((item, index) => {
@@ -60,6 +67,9 @@ function displayCartItems() {
       // Create the HTML structure
       const newItems = `
           <div>
+          <input type="checkbox" class="cart__checkbox" data-index="${index}" ${
+          checkedStatus[index] ? "checked" : ""
+          }/>
             <img src="${item.image}" alt="${item.name}" />
 
             <div class="cart__product-description">
@@ -99,6 +109,12 @@ function displayCartItems() {
 
       // Append the cartItemElement to the cart container
       cartContainer.appendChild(cartItemElement);
+
+      // Add event listeners for the checkboxes
+      const checkboxes = document.querySelectorAll(".cart__checkbox");
+      checkboxes.forEach((checkbox) => {
+        checkbox.addEventListener("change", updateTotalPrice);
+      });
     });
 
     // Add event listeners for decrement and increment buttons
@@ -118,6 +134,24 @@ function displayCartItems() {
         incrementCartItem(index);
       });
     });
+
+    // Create an element to display the total price below all cart items
+    const totalElement = document.createElement("div");
+    totalElement.classList.add("cart__checkout-wrapper");
+
+    const paragraphElement = document.createElement("p");
+    paragraphElement.classList.add("cart__total-price");
+    paragraphElement.textContent = `Total Price: $${totalPrice.toFixed(2)}`;
+
+    const checkoutButton = document.createElement("button");
+    checkoutButton.classList.add("cart__checkout-button");
+    checkoutButton.textContent = "Checkout Now";
+
+    // Append the totalElement to the cartContainer
+    cartContainer.appendChild(totalElement);
+    totalElement.appendChild(paragraphElement);
+    totalElement.appendChild(checkoutButton);
+
   } else {
     // If there's no cart data, display "There is no items in the cart."
     displayEmptyCartMessage();
@@ -151,6 +185,9 @@ function decrementCartItem(index) {
     // Refresh the cart display
     displayCartItems();
 
+    // Update the cart total based on selected checkboxes
+    updateTotalPrice();
+
     // If the cart becomes empty, display "There is no items in the cart."
     if (countQuantity.textContent === "0") {
       displayEmptyCartMessage();
@@ -179,6 +216,36 @@ function incrementCartItem(index) {
 
     // Refresh the cart display
     displayCartItems();
+
+    // Update the cart total based on selected checkboxes
+    updateTotalPrice();
+  }
+}
+
+function updateTotalPrice() {
+  // Get all the checkboxes
+  const checkboxes = document.querySelectorAll(".cart__checkbox");
+
+  // Get the cart items from localStorage
+  const cartDataJSON = localStorage.getItem("cart");
+
+  if (cartDataJSON) {
+    const cartItems = JSON.parse(cartDataJSON).items;
+    let totalPrice = 0;
+
+    // Loop through checkboxes and calculate the total price based on checked items
+    checkboxes.forEach((checkbox, index) => {
+      if (checkbox.checked) {
+        const numericPrice = parseFloat(
+          cartItems[index].price.replace(/[^0-9.]/g, "")
+        );
+        totalPrice += numericPrice * cartItems[index].quantity;
+      }
+    });
+
+    // Display the total price in the totalElement
+    const paragraphElement = document.querySelector(".cart__total-price");
+    paragraphElement.textContent = `Total Price: $${totalPrice.toFixed(2)}`;
   }
 }
 
