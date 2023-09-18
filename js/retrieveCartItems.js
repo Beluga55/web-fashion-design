@@ -2,6 +2,7 @@
 const cartContainer = document.querySelector(".cart__content");
 const countQuantity = document.querySelector(".count__quantity");
 const redirectBtn = document.querySelector(".redirect__product-btn");
+const discoverMore = document.querySelectorAll(".discover-more");
 
 // Function to display "There is no items in the cart" message
 function displayEmptyCartMessage() {
@@ -68,8 +69,8 @@ function displayCartItems() {
       const newItems = `
           <div>
           <input type="checkbox" class="cart__checkbox" data-index="${index}" ${
-          checkedStatus[index] ? "checked" : ""
-          }/>
+        checkedStatus[index] ? "checked" : ""
+      }/>
             <img src="${item.image}" alt="${item.name}" />
 
             <div class="cart__product-description">
@@ -151,7 +152,6 @@ function displayCartItems() {
     cartContainer.appendChild(totalElement);
     totalElement.appendChild(paragraphElement);
     totalElement.appendChild(checkoutButton);
-
   } else {
     // If there's no cart data, display "There is no items in the cart."
     displayEmptyCartMessage();
@@ -264,3 +264,23 @@ displayCartItems();
 if (countQuantity.textContent === "0") {
   displayEmptyCartMessage();
 }
+
+discoverMore.forEach((btn) => {
+  btn.addEventListener("click", () => {
+    window.location.href = "products.html";
+  });
+});
+
+// Swiper Cart Things You May Like
+var swiperCart = new Swiper(".cart", {
+  spaceBetween: 40,
+  grabCursor: true,
+  centeredSlides: true,
+  slidesPerView: "auto",
+  loop: true,
+
+  navigation: {
+    nextEl: ".swiper-button-next",
+    prevEl: ".swiper-button-prev",
+  },
+});

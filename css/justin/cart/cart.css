@@ -221,6 +221,7 @@ i {
   outline: none;
   border-radius: 0.2rem;
   transition: color 0.3s ease-in-out, background 0.3s ease-in-out;
+  color: var(--Black);
 }
 
 .redirect__product-btn:hover {
@@ -253,6 +254,7 @@ i {
   border: 1px solid var(--Dark);
   border-radius: 0.2rem;
   transition: color 0.3s ease-in-out, background 0.3s ease-in-out;
+  color: var(--Black);
 }
 
 .cart__checkout-button:hover {
@@ -260,11 +262,137 @@ i {
   background: var(--DarkGold);
 }
 
+.cart {
+  padding-bottom: 4rem;
+}
+
+.cart__things-you-like {
+  margin-bottom: 5rem;
+}
+
+.cart__things-you-like h2 {
+  text-align: center;
+  text-transform: uppercase;
+  font-size: 1.25rem;
+}
+
+.cart__slides {
+  width: 290px;
+  margin-top: 1.5rem;
+  border: 2px solid var(--Dark);
+  padding: 1rem;
+  border-radius: 0.5rem;
+}
+
+.cart__slides h3 {
+  text-transform: uppercase;
+  font-family: var(--Josefin);
+  font-size: 16px;
+  margin-top: 1rem;
+}
+
+.cart__slides p {
+  font-size: 13px;
+  font-weight: var(--Raleway700);
+  margin-top: 0.5rem;
+}
+
+.cart__slides img {
+  width: 100%;
+  height: 350px;
+  object-fit: cover;
+  border-radius: 0.5rem;
+}
+
+.cart__slides button {
+  margin-top: 1rem;
+  width: 100%;
+  padding: 0.75rem 0;
+  border: 1px solid var(--Dark);
+  font-family: var(--Raleway);
+  font-weight: var(--Raleway600);
+  border-radius: 0.2rem;
+  background: none;
+  transition: background 0.3s ease-in-out, color 0.3s ease-in-out;
+  color: var(--Black);
+}
+
+.cart__slides button:hover {
+  color: var(--White);
+  background: var(--DarkGold);
+  border: 1px solid var(--White);
+  box-shadow: 0 0 10px 0 var(--DarkGold);
+}
+
+.star__rating {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 0.25rem;
+}
+
+.fa-star,
+.fa-star-half {
+  color: var(--Gold);
+}
+
+
+/* ====== SWIPER CLASS ====== */
+.swiper-button-next::after,
+.swiper-button-prev::after {
+  content: "";
+}
+
+.swiper-slide {
+  height: initial;
+}
+
+.swiper-button-next,
+.swiper-button-prev {
+  top: initial;
+  bottom: 0;
+  width: initial;
+  height: initial;
+  background-color: var(--White);
+  border: 1px solid var(--Dark);
+  padding: 6px;
+  border-radius: 0.25rem;
+  font-size: 1.5rem;
+  color: var(--first-color);
+  transition: 0.5s;
+}
+
+.swiper-button-prev {
+  left: calc(50% - 2.5rem);
+}
+
+.swiper-button-next {
+  right: calc(50% - 2.5rem);
+}
+
+
+
 @media screen and (min-width: 576px) {
   .nav__menu a,
   .nav__logo a,
   .nav__logo i,
   .header i {
     color: var(--White);
+  }
+
+  .footer__outer-row-first > div:last-child,
+  .footer__outer-row-second > div:first-child,
+  .footer__outer-row-second > div:last-child {
+    margin-top: 0;
+  }
+
+  .footer__outer-row-second {
+    margin-top: 1rem;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .footer__outer-row-second {
+    margin-top: 0;
   }
 }

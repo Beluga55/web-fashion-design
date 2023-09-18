@@ -16,9 +16,7 @@
   .login__overlay > div {
     width: 400px;
   }
-}
 
-@media screen and (min-width: 576px) {
   .footer__outer-row-first > div:last-child,
   .footer__outer-row-second > div:first-child,
   .footer__outer-row-second > div:last-child {
