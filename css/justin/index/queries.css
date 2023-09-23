@@ -58,7 +58,8 @@
   }
 
   .hero__quotes a {
-    border: 2px solid var(--Black);
+    background: var(--Dark);
+    color: var(--White);
   }
 
   .hero > div {
@@ -237,7 +238,7 @@
   }
 
   .newsletter__form > form > input[type="submit"] {
-    background: transparent;
+    background: none;
     border: 2px solid Grey;
   }
 

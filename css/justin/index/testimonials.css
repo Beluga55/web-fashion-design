@@ -2,11 +2,6 @@
   padding: 2rem;
 }
 
-.testimonials__card:hover,
-.trending__card:hover {
-  border: 2px solid var(--DarkGold);
-}
-
 .testimonials__card > div {
   display: flex;
   align-items: center;

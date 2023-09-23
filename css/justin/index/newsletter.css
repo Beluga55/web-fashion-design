@@ -25,9 +25,9 @@
 .newsletter__form-wrapper > div > input[type="text"],
 .newsletter__form-wrapper > div > input[type="email"],
 .newsletter__form-wrapper > div > textarea {
-  padding: 0.5rem 1rem;
+  padding: 0.75rem 1rem;
   border: 2px solid var(--Dark);
-  border-radius: 0.25rem;
+  border-radius: 0.2rem;
 }
 
 .newsletter__form-wrapper > div {
@@ -53,14 +53,17 @@
   font-weight: var(--Raleway600);
   background: var(--Dark);
   color: var(--White);
-  transition: color 0.3s ease-in-out, background 0.3s ease-in-out;
+  transition: background 0.3s ease-in-out, color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
   border: none;
   outline: none;
-  border-radius: 0.25rem;
+  border-radius: 0.2rem;
+  font-size: 13px;
 }
 
 .newsletter__form > form > input[type="submit"]:hover {
   background: var(--DarkGold);
+  color: var(--White);
+  box-shadow: 0 0 10px 0 var(--DarkGold);
 }
 
 .newsletter__overlay > div:not(:last-child) {
@@ -106,7 +109,7 @@
   background: var(--White);
   width: calc(100% - 3rem);
   padding: 1rem;
-  border-radius: 0.25rem;
+  border-radius: 0.2rem;
   box-shadow: 0 0 20px 0 var(--White);
 }
 

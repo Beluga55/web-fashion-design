@@ -6,7 +6,7 @@
 .signup__form {
   border: 2px solid rgba(45, 45, 45, 0.5);
   margin: 2rem 1.5rem;
-  border-radius: 0.25rem;
+  border-radius: 0.2rem;
   padding: 1.5rem;
 }
 
@@ -31,7 +31,7 @@
 .signup__last-name input[type="text"] {
   width: 100%;
   margin-top: 0.5rem;
-  padding: 0.5rem 0 0.5rem 0.75rem;
+  padding: 0.75rem 0 0.75rem 0.75rem;
   border: 2px solid var(--Black);
   border-radius: 0.2rem;
   font-family: var(--Raleway);
@@ -52,9 +52,8 @@
 }
 
 .signup__content input[type="email"],
-.signup__content input[type="password"],
-.signup__content button {
-  padding: 0.5rem 0 0.5rem 0.75rem;
+.signup__content input[type="password"] {
+  padding: 0.75rem 0 0.75rem 0.75rem;
   border: 2px solid var(--Black);
   border-radius: 0.2rem;
   font-family: var(--Raleway);
@@ -64,16 +63,21 @@
 
 .signup__content button {
   margin-top: 0.75rem;
-  background: var(--White);
+  padding: 0.75rem;
+  background: var(--Dark);
   font-weight: var(--Raleway600);
-  transition: background 0.3s ease-in-out, color 0.3s ease-in-out;
-  color: var(--Black);
+  transition: box-shadow 0.3s ease-in-out, background 0.3s ease-in-out, color 0.3s ease-in-out;
+  color: var(--White);
+  border-radius: 0.2rem;
+  font-family: var(--Raleway);
+  font-size: 13px;
+  border: none;
 }
 
 .signup__content button:hover {
-  background: var(--Gold);
-  border: none;
+  background: var(--DarkGold);
   color: var(--White);
+  box-shadow: 0 0 10px 0 var(--DarkGold);
 }
 
 .signup__first-name p,

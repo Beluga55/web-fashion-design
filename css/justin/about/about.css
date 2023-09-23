@@ -153,14 +153,31 @@ i {
   object-position: top;
   box-shadow: 0 0 20px 0 rgba(22, 22, 22, 0.75);
   border: 2px solid var(--Dark);
+  border-radius: 0.2rem;
 }
 
 .about__us-text p {
   margin-top: 1rem;
+  margin-bottom: 1.5rem;
   text-align: justify;
   font-size: 14px;
   line-height: 1.75rem;
   font-weight: var(--Raleway600);
+}
+
+.about__us-text a {
+  text-align: center;
+  text-decoration: none;
+  background: var(--Dark);
+  transition: box-shadow 0.3s ease-in-out, background 0.3s ease-in-out;
+  padding: 0.75rem 1rem;
+  color: var(--White);
+  font-size: 13px;
+}
+
+.about__us-text a:hover {
+  background: var(--DarkGold);
+  box-shadow: 0 0 10px 0 var(--DarkGold);
 }
 
 @media screen and (max-width: 576px) {
@@ -202,6 +219,10 @@ i {
   .about__container .section__title,
   .about__container .section__subtitle {
     display: none;
+  }
+
+  .about__us-text .section__subtitle {
+    margin-bottom: 0;
   }
 
   .about__us-text .section__title,

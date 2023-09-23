@@ -31,7 +31,7 @@
   margin: 2rem 1rem;
   padding: 1rem 1.5rem 0;
   border: 2px solid rgba(45, 45, 45, 0.5);
-  border-radius: 0.25rem;
+  border-radius: 0.2rem;
 }
 
 .login__form > div {
@@ -69,9 +69,9 @@
 .login__form > div > input[type="password"] {
   font-family: var(--Raleway);
   font-size: 12px;
-  padding: 0.5rem 1rem;
+  padding: 0.75rem 1rem;
   border: 2px solid var(--Dark);
-  border-radius: 0.25rem;
+  border-radius: 0.2rem;
   outline: none;
   background: var(--White);
   width: 280px;
@@ -80,22 +80,23 @@
 
 .login-submit {
   margin-top: 1.25rem;
-  padding: 0.6rem 2rem;
+  padding: 0.75rem 2rem;
   background: transparent;
-  border: 2px solid var(--Dark);
+  border: none;
   outline: none;
-  border-radius: 0.25rem;
+  border-radius: 0.2rem;
   font-family: var(--Raleway);
   font-weight: var(--Raleway500);
   font-size: 12px;
-  transition: color 0.3s ease-in-out, background 0.3s ease-in-out;
-  color: var(--Black);
+  transition: box-shadow 0.3s ease-in-out, color 0.3s ease-in-out, background 0.3s ease-in-out;
+  background: var(--Dark);
+  color: var(--White);
 }
 
 .login-submit:hover {
   color: var(--White);
   background: var(--DarkGold);
-  border: none;
+  box-shadow: 0 0 10px 0 var(--DarkGold);
 }
 
 .login__form > div:nth-child(3) {
@@ -167,7 +168,7 @@
   background: var(--White);
   width: calc(100% - 3rem);
   padding: 1rem;
-  border-radius: 0.25rem;
+  border-radius: 0.2rem;
   box-shadow: 0 0 20px 0 var(--White);
 }
 

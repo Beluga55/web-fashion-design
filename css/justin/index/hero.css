@@ -35,7 +35,7 @@
   border: 1px solid var(--White);
   padding: 1rem;
   background: rgba(255, 255, 255, 0.1);
-  border-radius: 0.25rem;
+  border-radius: 0.2rem;
   font-family: var(--Raleway);
   text-transform: uppercase;
 }
@@ -52,20 +52,20 @@
 .hero__quotes a {
   text-decoration: none;
   background: var(--White);
-  padding: 10px 20px;
+  padding: 0.75rem 1rem;
   font-family: var(--Raleway);
-  font-size: 14px;
+  font-size: 13px;
   font-weight: var(--Raleway600);
   color: var(--Black);
-  border-radius: 0.25rem;
-  transition: background 0.3s ease-in-out, color 0.3s ease-in-out;
+  border-radius: 0.2rem;
+  transition: color 0.3s ease-in-out, box-shadow 0.3s ease-in-out, background 0.3s ease-in-out;
   cursor: pointer;
 }
 
 .hero__quotes a:hover {
   background: var(--DarkGold);
   color: var(--White);
-  border: 2px solid var(--White);
+  box-shadow: 0 0 10px 0 var(--DarkGold);
 }
 
 .hero__scroll-down i {

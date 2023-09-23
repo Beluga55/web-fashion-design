@@ -111,7 +111,7 @@ i {
   margin-inline: 1.5rem;
   border: 2px solid var(--Dark);
   padding: 1rem;
-  border-radius: 0.25rem;
+  border-radius: 0.2rem;
   display: flex;
   flex-direction: column;
   max-height: 60vh;
@@ -130,7 +130,7 @@ i {
   height: 180px;
   object-fit: cover;
   object-position: top;
-  border-radius: 0.25rem;
+  border-radius: 0.2rem;
 }
 
 .cart__product-description h3 {
@@ -217,19 +217,19 @@ i {
 .redirect__product-btn {
   padding: 0.75rem 1rem;
   font-family: var(--Raleway);
-  font-weight: var(--Raleway700);
-  border: 1px solid var(--Dark);
-  background: none;
+  background: var(--Dark);
+  border: none;
   outline: none;
   border-radius: 0.2rem;
-  transition: color 0.3s ease-in-out, background 0.3s ease-in-out;
-  color: var(--Black);
+  transition: box-shadow 0.3s ease-in-out, color 0.3s ease-in-out, background 0.3s ease-in-out;
+  color: var(--White);
+  font-size: 13px;
 }
 
 .redirect__product-btn:hover {
   color: var(--White);
   background: var(--DarkGold);
-  border: none;
+  box-shadow: 0 0 10px 0 var(--DarkGold);
 }
 
 .empty__cart-image {
@@ -338,7 +338,6 @@ i {
   color: var(--Gold);
 }
 
-
 /* ====== SWIPER CLASS ====== */
 .swiper-button-next::after,
 .swiper-button-prev::after {
@@ -358,7 +357,7 @@ i {
   background-color: var(--White);
   border: 1px solid var(--Dark);
   padding: 6px;
-  border-radius: 0.25rem;
+  border-radius: 0.2rem;
   font-size: 1.5rem;
   color: var(--first-color);
   transition: 0.5s;
