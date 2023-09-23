@@ -76,7 +76,7 @@ function displayCartItems() {
             <div class="cart__product-description">
               <h3>${item.name}</h3>
               <p>${item.description}</p>
-              <div>
+              <div class="size__color-div">
                 <div>
                   <span>Color</span>
                   <div class="active__color">

@@ -140,8 +140,10 @@ i {
 }
 
 .cart__cta {
+  display: flex;
   align-items: center;
-  column-gap: 2rem;
+  column-gap: 1rem;
+  margin-top: 0.5rem;
 }
 
 .cart__cta h3 {
@@ -166,10 +168,10 @@ i {
   border-bottom: 2px solid var(--DarkGold);
 }
 
-.cart__product-description > div {
+.size__color-div {
   margin-top: 0.5rem;
   display: flex;
-  column-gap: 2rem;
+  column-gap: 1.5rem;
 }
 
 .empty__text {
@@ -369,8 +371,6 @@ i {
 .swiper-button-next {
   right: calc(50% - 2.5rem);
 }
-
-
 
 @media screen and (min-width: 576px) {
   .nav__menu a,

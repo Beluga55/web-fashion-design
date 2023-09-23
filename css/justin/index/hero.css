@@ -32,11 +32,10 @@
   color: var(--White);
   font-size: 1.7rem;
   line-height: 1.5;
-  border: 2px solid var(--White);
+  border: 1px solid var(--White);
   padding: 1rem;
   background: rgba(255, 255, 255, 0.1);
   border-radius: 0.25rem;
-  box-shadow: 0 0 25px 0 var(--White);
   font-family: var(--Raleway);
   text-transform: uppercase;
 }
