@@ -162,7 +162,6 @@ i {
   text-align: justify;
   font-size: 14px;
   line-height: 1.75rem;
-  font-weight: var(--Raleway600);
 }
 
 .about__us-text a {
@@ -173,11 +172,67 @@ i {
   padding: 0.75rem 1rem;
   color: var(--White);
   font-size: 13px;
+  box-shadow: 0 0 5px 0 var(--Dark);
 }
 
 .about__us-text a:hover {
   background: var(--DarkGold);
   box-shadow: 0 0 10px 0 var(--DarkGold);
+}
+
+.love__castellan {
+  background: var(--Dark);
+}
+
+.about__banner img {
+  width: 100%;
+  height: 400px;
+  object-fit: cover;
+  object-position: top;
+  border-radius: 0.25rem;
+  box-shadow: 0 0 10px 0 var(--White);
+}
+
+.about__banner h2 {
+  margin-top: 1rem;
+  font-family: var(--Josefin);
+  text-transform: uppercase;
+  color: var(--White);
+  line-height: 1.5;
+}
+
+.about__banner p {
+  color: var(--White);
+  line-height: 1.75rem;
+  margin-top: 0.75rem;
+  text-align: justify;
+  font-size: 13px;
+}
+
+#more-content {
+  display: none;
+}
+
+#more-content.show {
+  display: initial;
+}
+
+#read-more {
+  margin-top: 0.5rem;
+  padding: 0.7rem 1rem;
+  font-size: 13px;
+  font-family: var(--Raleway);
+  font-weight: var(--Raleway600);
+  border: none;
+  outline: none;
+  box-shadow: 0 0 5px 0 var(--White);
+  transition: box-shadow 0.3s ease-in-out, color 0.3s ease-in-out, background 0.3s ease-in-out;
+}
+
+#read-more:hover {
+  background: var(--DarkGold);
+  color: var(--White);
+  box-shadow: 0 0 5px 0 var(--DarkGold);
 }
 
 @media screen and (max-width: 576px) {
@@ -216,6 +271,19 @@ i {
     order: 1;
   }
 
+  .about__banner {
+    display: grid;
+    align-items: center;
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: 2rem;
+  }
+
+  .about__banner h2 {
+    margin-top: 0;
+    border-bottom: 2px solid var(--DarkGold);
+    width: fit-content;
+  }
+
   .about__container .section__title,
   .about__container .section__subtitle {
     display: none;
@@ -234,6 +302,7 @@ i {
   }
 
   .about__us-text .section__title {
+    font-family: var(--Josefin);
     border-bottom: 2px solid var(--DarkGold);
     width: fit-content;
   }
@@ -259,6 +328,6 @@ i {
 
 @media screen and (min-width: 1024px) {
   .about__us-text .section__title {
-    font-size: 2.25rem;
+    font-size: 2rem;
   }
 }
