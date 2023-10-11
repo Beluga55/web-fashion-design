@@ -238,8 +238,12 @@ i {
 }
 
 .cart__total-price {
-  font-weight: var(--Raleway700);
-  font-size: 1rem;
+  font-size: 14px;
+  font-weight: var(--Raleway600);
+}
+
+.initial-price {
+  font-family: var(--Josefin);
 }
 
 .cart__checkout-wrapper {

@@ -142,7 +142,11 @@ function displayCartItems() {
 
     const paragraphElement = document.createElement("p");
     paragraphElement.classList.add("cart__total-price");
-    paragraphElement.textContent = `Total Price: $${totalPrice.toFixed(2)}`;
+    paragraphElement.textContent = `Total Price: $`;
+
+    const priceSpan = document.createElement("span");
+    priceSpan.classList.add("initial-price");
+    priceSpan.textContent = `${totalPrice.toFixed(2)}`;
 
     const checkoutButton = document.createElement("button");
     checkoutButton.classList.add("cart__checkout-button");
@@ -151,6 +155,7 @@ function displayCartItems() {
     // Append the totalElement to the cartContainer
     cartContainer.appendChild(totalElement);
     totalElement.appendChild(paragraphElement);
+    paragraphElement.appendChild(priceSpan);
     totalElement.appendChild(checkoutButton);
   } else {
     // If there's no cart data, display "There is no items in the cart."
@@ -188,6 +193,9 @@ function decrementCartItem(index) {
     // Update the cart total based on selected checkboxes
     updateTotalPrice();
 
+    // Update the localstorage for selectedItems
+    updateSelectedItems();
+
     // If the cart becomes empty, display "There is no items in the cart."
     if (countQuantity.textContent === "0") {
       displayEmptyCartMessage();
@@ -219,6 +227,9 @@ function incrementCartItem(index) {
 
     // Update the cart total based on selected checkboxes
     updateTotalPrice();
+
+    // Increment the localstorage for selected items
+    updateSelectedItems();
   }
 }
 
@@ -244,16 +255,61 @@ function updateTotalPrice() {
     });
 
     // Display the total price in the totalElement
-    const paragraphElement = document.querySelector(".cart__total-price");
-    paragraphElement.textContent = `Total Price: $${totalPrice.toFixed(2)}`;
+    const priceSpan = document.querySelector(".initial-price");
+    priceSpan.textContent = `${totalPrice.toFixed(2)}`;
   }
 }
 
-// Event delegation for the redirect button
+// Event delegation for (Click)
 document.addEventListener("click", (event) => {
   if (event.target.classList.contains("redirect__product-btn")) {
     // Handle the button click here
     window.location.href = "products.html";
+  }
+  if (event.target.classList.contains("cart__checkout-button")) {
+    window.location.href = "checkout.html";
+  }
+});
+
+// Function to update the selected items in local storage
+function updateSelectedItems() {
+  const selectedItems = [];
+  let totalPrice = 0;
+  const checkboxes = document.querySelectorAll(".cart__checkbox");
+  const cartItems = document.querySelectorAll(".cart__item");
+
+  checkboxes.forEach((checkbox, index) => {
+    if (checkbox.checked) {
+      const cartItem = cartItems[index];
+      const image = cartItem.querySelector("img").src;
+      const name = cartItem.querySelector("h3").textContent;
+      const color = cartItem.querySelector(".active__color").textContent;
+      const quantity = parseInt(
+        cartItem.querySelector(".cart__buttons p").textContent
+      );
+      const price = parseFloat(
+        cartItem.querySelector(".cart__cta h3").textContent.replace("$", "")
+      );
+
+      // Calculate the subtotal for the current item and add it to the total price
+      const subtotal = quantity * price;
+      totalPrice += subtotal;
+
+      // Push all the items into array
+      selectedItems.push({ image, name, color, quantity, price });
+    }
+  });
+  // Store the total price in local storage
+  localStorage.setItem("totalPrice", totalPrice.toFixed(2));
+
+  localStorage.setItem("selectedItems", JSON.stringify(selectedItems));
+}
+
+// Event delegation for (Change)
+document.addEventListener("change", (event) => {
+  if (event.target.classList.contains("cart__checkbox")) {
+    // Update the selected items in local storage
+    updateSelectedItems();
   }
 });
 
