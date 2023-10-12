@@ -88,7 +88,7 @@ function displayCartItems() {
                     ? `
                 <div>
                   <span>Size</span>
-                  <p>${item.size}</p>
+                  <p class="cart__item-size">${item.size}</p>
                 </div>`
                     : ""
                 }
@@ -283,7 +283,9 @@ function updateSelectedItems() {
       const cartItem = cartItems[index];
       const image = cartItem.querySelector("img").src;
       const name = cartItem.querySelector("h3").textContent;
-      const color = cartItem.querySelector(".active__color").textContent;
+      const color = cartItem.querySelector(".active__color").innerHTML;
+      let sizeElement = cartItem.querySelector(".cart__item-size");
+      let size = sizeElement ? sizeElement.textContent : ""; // Default to "No Size" if size is not found
       const quantity = parseInt(
         cartItem.querySelector(".cart__buttons p").textContent
       );
@@ -296,7 +298,7 @@ function updateSelectedItems() {
       totalPrice += subtotal;
 
       // Push all the items into array
-      selectedItems.push({ image, name, color, quantity, price });
+      selectedItems.push({ image, name, color, quantity, price, size });
     }
   });
   // Store the total price in local storage

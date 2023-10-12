@@ -33,3 +33,11 @@
     margin-top: 0;
   }
 }
+
+@media screen and (min-width: 1800px) {
+  .footer {
+    position: absolute;
+    bottom: -1.5rem;
+    width: 100%;
+  }
+}

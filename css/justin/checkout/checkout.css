@@ -2,6 +2,7 @@
 
 @import url(../index/header&nav.css);
 @import url(../index/queries.css);
+@import url(../index/trending.css);
 @import url(../index/footer.css);
 
 :root {
@@ -105,17 +106,25 @@ i {
   display: flex;
   align-items: center;
   justify-content: center;
+  flex-direction: column;
 }
 
-.checkout__content > div {
+.checkout__content > div:first-child {
   border: 2px solid var(--Dark);
   border-radius: 0.2rem;
   padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  max-height: 80vh;
+  overflow-y: scroll;
+  width: 100%;
 }
 
 .checked__item {
   display: flex;
   align-items: center;
+  column-gap: 1.75rem;
 }
 
 .checked__item img {
@@ -123,6 +132,186 @@ i {
   height: 180px;
   object-fit: cover;
   border-radius: 0.2rem;
+}
+
+.checkout__item-name {
+  font-size: 14px;
+}
+
+.checkout__item-size-color {
+  margin-top: 0.5rem;
+  display: flex;
+  column-gap: 1.5rem;
+}
+
+.checkout__item-size-color div:first-child {
+  display: flex;
+  flex-direction: column;
+}
+
+.checkout__item-size-color div:first-child p:first-child,
+.checkout__item-size-color div:last-child p:first-child {
+  font-size: 13px;
+  font-weight: var(--Raleway500);
+  margin-bottom: 0.5rem;
+  border-bottom: 2px solid var(--DarkGold);
+  width: fit-content;
+}
+
+.checkout__item-size-color div:first-child p:last-child {
+  font-size: 13px;
+  font-weight: var(--Raleway600);
+}
+
+.checkout__item-size-color div:last-child span {
+  font-size: 13px;
+  font-weight: var(--Raleway600);
+}
+
+.checkout__item-price-quantity {
+  margin-top: 1rem;
+  display: flex;
+  column-gap: 1rem;
+  align-items: center;
+}
+
+.checkout__item-price-quantity div:first-child p {
+  font-size: 16px;
+  font-family: var(--Josefin);
+  font-weight: var(--Raleway600);
+}
+
+.checkout__item-price-quantity div:last-child p {
+  font-size: 14px;
+  font-weight: var(--Raleway600);
+  font-family: var(--Josefin);
+}
+
+.checkout__item-price-quantity div:last-child span {
+  font-size: 14px;
+  font-family: var(--Raleway);
+}
+
+.svg-checkout {
+  width: 50px;
+  height: 50px;
+}
+
+.empty__checkout-container {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.empty__checkout-text {
+  font-size: 14px;
+  text-align: center;
+  margin-top: 1rem;
+  line-height: 1.25rem;
+  font-weight: var(--Raleway600);
+}
+
+.redirect__checkout {
+  margin-top: 1rem;
+  padding: 0.75rem 1rem;
+  font-family: var(--Raleway);
+  background: var(--Dark);
+  border: none;
+  outline: none;
+  border-radius: 0.2rem;
+  transition: box-shadow 0.3s ease-in-out, color 0.3s ease-in-out,
+    background 0.3s ease-in-out;
+  color: var(--White);
+  font-size: 13px;
+}
+
+.redirect__checkout:hover {
+  box-shadow: 0 0 10px 0 var(--DarkGold);
+  background: var(--DarkGold);
+}
+
+.form__checkout {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.label__checkout {
+  font-size: 14px;
+  font-weight: var(--Raleway600);
+  margin-bottom: 0.5rem;
+}
+
+.input__checkout {
+  padding: 0.7rem 0.5rem;
+  margin-bottom: 1rem;
+  font-family: var(--Raleway);
+}
+
+#map {
+  width: 100%;
+  height: 200px;
+}
+
+.form__checkout {
+  margin-top: 2rem;
+}
+
+.select__outer-div {
+  width: 100%;
+}
+
+.payment__paragraph {
+  font-size: 14px;
+  font-weight: var(--Raleway600);
+  margin: 1rem 0;
+}
+
+#paymentMethod {
+  width: 100%;
+  padding: 0.5rem;
+  font-family: var(--Raleway);
+}
+
+#cardNumber {
+  margin-top: 1rem;
+  padding: 0.6rem 0.7rem;
+  font-family: var(--Raleway600);
+  width: 100%;
+}
+
+.payment__div {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 1.25rem;
+}
+
+.checkout__total-price {
+  font-size: 14px;
+  font-weight: var(--Raleway600);
+}
+
+.payment__div .checkout__total-price > span {
+  font-family: var(--Josefin);
+  font-size: 1rem;
+}
+
+.pay__now-btn {
+  padding: 0.5rem 1rem;
+  font-family: var(--Raleway);
+  font-weight: var(--Raleway600);
+  background: none;
+  border: 2px solid var(--Dark);
+  border-radius: 0.2rem;
+  transition: color 0.3s ease-in-out, box-shadow 0.3s ease-in-out,
+    background 0.3s ease-in-out;
+}
+
+.pay__now-btn:hover {
+  color: var(--White);
+  box-shadow: 0 0 10px 0 var(--DarkGold);
+  background: var(--DarkGold);
 }
 
 @media screen and (min-width: 576px) {
@@ -141,6 +330,13 @@ i {
 
   .footer__outer-row-second {
     margin-top: 1rem;
+  }
+}
+
+@media screen and (min-width: 600px) {
+  .form__checkout,
+  .select__outer-div {
+    width: 600px;
   }
 }
 
