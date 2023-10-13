@@ -56,13 +56,10 @@ function displaySelectedItems() {
         checkoutContainer.style.display = "flex";
         checkoutContainer.style.alignItems = "center";
       }
-    }
-    else {
+    } else {
       if (window.innerWidth >= 600) {
         checkoutContainer.style.width = "600px";
-      }
-
-      else {
+      } else {
         checkoutContainer.style.width = "100%";
       }
     }
@@ -240,6 +237,13 @@ function createFormElement() {
       totalPrice.classList.add("checkout__total-price");
       totalPrice.innerHTML = `Total Payment: <span>$${totalPayment}</span>`;
 
+      // Create an input element for card number
+      const cardNumberInput = document.createElement("input");
+      cardNumberInput.type = "text";
+      cardNumberInput.id = "cardNumber";
+      cardNumberInput.name = "cardNumber";
+      cardNumberInput.placeholder = "Enter 16-digit card number";
+
       // Create the submit button
       const submitButton = document.createElement("button");
       submitButton.setAttribute("type", "submit");
@@ -253,7 +257,7 @@ function createFormElement() {
       checkoutContent.appendChild(selectOuterDiv);
       selectOuterDiv.appendChild(selectParagraphElement);
       selectOuterDiv.appendChild(selectElement);
-      validateCardElement();
+      selectOuterDiv.appendChild(cardNumberInput);
       formCheckout.appendChild(labelCheckout);
       formCheckout.appendChild(inputElement);
       formCheckout.appendChild(divMap);
@@ -262,6 +266,8 @@ function createFormElement() {
       selectOuterDiv.appendChild(paymentDiv);
       paymentDiv.appendChild(totalPrice);
       paymentDiv.appendChild(submitButton);
+
+      validateCardElement();
     }
   }
 }
@@ -270,16 +276,20 @@ function createFormElement() {
 function validateCardElement() {
   const paymentMethodSelect = document.getElementById("paymentMethod");
   const selectOuterDiv = document.querySelector(".select__outer-div");
+  const payNow = document.querySelector(".pay__now-btn");
+  const cardNumberInput = document.getElementById("cardNumber");
+  const deliveryAddress = document.getElementById("deliveryAddress");
 
-  // Create an input element for card number
-  const cardNumberInput = document.createElement("input");
-  cardNumberInput.type = "text";
-  cardNumberInput.id = "cardNumber";
-  cardNumberInput.name = "cardNumber";
-  cardNumberInput.placeholder = "Enter 16-digit card number";
+  // Define the formatCardNumber function
+  function formatCardNumber(cardNumber) {
+    // Remove any non-numeric characters (e.g., spaces and dashes)
+    cardNumber = cardNumber.replace(/\D/g, "");
 
-  // Append the card number input to the container
-  selectOuterDiv.appendChild(cardNumberInput);
+    // Add a space every 4 digits
+    cardNumber = cardNumber.replace(/(\d{4})(?=\d)/g, "$1 ");
+
+    return cardNumber;
+  }
 
   // Add an event listener to the select element
   paymentMethodSelect.addEventListener("change", function () {
@@ -289,6 +299,36 @@ function validateCardElement() {
       cardNumberInput.style.display = "block";
     } else {
       cardNumberInput.style.display = "none";
+    }
+  });
+
+  payNow.addEventListener("click", function () {
+    const selectedValue = paymentMethodSelect.value;
+    const deliveryAddressValue = deliveryAddress.value;
+
+    // Change The Format Card Number
+    cardNumberInput.value = formatCardNumber(cardNumberInput.value);
+
+    // Remove spaces before checking the card number length
+    const trimmedCardNumber = cardNumberInput.value.replace(/\s/g, "");
+
+    // Validation For DeliveryAddress
+    if (deliveryAddressValue === "") {
+      deliveryAddress.style.border = "2px solid red";
+    } else {
+      deliveryAddress.style.border = "2px solid green";
+    }
+
+    if (selectedValue === "visa" || selectedValue === "mastercard") {
+      // Check for 16 digits for Visa and MasterCard
+      if (trimmedCardNumber.length === 16) {
+        cardNumberInput.style.border = "2px solid green";
+      } else {
+        cardNumberInput.style.border = "2px solid red";
+      }
+    } else {
+      // If it's not Visa or MasterCard, don't change the border
+      cardNumberInput.style.border = "initial"; // or any other desired style
     }
   });
 }
