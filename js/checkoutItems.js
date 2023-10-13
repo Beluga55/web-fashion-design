@@ -57,6 +57,15 @@ function displaySelectedItems() {
         checkoutContainer.style.alignItems = "center";
       }
     }
+    else {
+      if (window.innerWidth >= 600) {
+        checkoutContainer.style.width = "600px";
+      }
+
+      else {
+        checkoutContainer.style.width = "100%";
+      }
+    }
   }
 
   // Add an event listener to respond to window resizing
