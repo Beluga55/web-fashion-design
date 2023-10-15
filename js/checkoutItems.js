@@ -279,6 +279,7 @@ function validateCardElement() {
   const payNow = document.querySelector(".pay__now-btn");
   const cardNumberInput = document.getElementById("cardNumber");
   const deliveryAddress = document.getElementById("deliveryAddress");
+  const checkoutOverlay = document.querySelector(".checkout__overlay");
 
   // Define the formatCardNumber function
   function formatCardNumber(cardNumber) {
@@ -303,6 +304,32 @@ function validateCardElement() {
   });
 
   payNow.addEventListener("click", function () {
+    const cartDataJSON = localStorage.getItem("cart");
+    const checkedDataJSON = localStorage.getItem("selectedItems");
+
+    // Parse the JSON data into JavaScript objects
+    const cartData = JSON.parse(cartDataJSON);
+    const checkedData = JSON.parse(checkedDataJSON);
+
+    // Function to remove checked items from the cart
+    function removeCheckedItemsFromCart(cart, checked) {
+      cart.items = cart.items.filter((cartItem) => {
+        // Extract the file name from the URL for comparison
+        const cartItemFileName = cartItem.image.split("/").pop();
+        return !checked.some((checkedItem) => {
+          const checkedItemFileName = checkedItem.image.split("/").pop();
+          return checkedItemFileName === cartItemFileName;
+        });
+      });
+      return cart;
+    }
+
+    // Compare and update the cart
+    const updatedCartData = removeCheckedItemsFromCart(cartData, checkedData);
+
+    // Save the updated cart data back to local storage
+    localStorage.setItem("cart", JSON.stringify(updatedCartData));
+
     const selectedValue = paymentMethodSelect.value;
     const deliveryAddressValue = deliveryAddress.value;
 
@@ -313,22 +340,37 @@ function validateCardElement() {
     const trimmedCardNumber = cardNumberInput.value.replace(/\s/g, "");
 
     // Validation For DeliveryAddress
-    if (deliveryAddressValue === "") {
-      deliveryAddress.style.border = "2px solid red";
-    } else {
-      deliveryAddress.style.border = "2px solid green";
+    if (selectedValue !== "cashondelivery") {
+      if (deliveryAddressValue === "") {
+        deliveryAddress.style.border = "2px solid red";
+        deliveryAddress.style.borderRadius = "0.2rem";
+      } else {
+        deliveryAddress.style.border = "2px solid green";
+        deliveryAddress.style.borderRadius = "0.2rem";
+      }
+
+      if (selectedValue === "visa" || selectedValue === "mastercard") {
+        // Check for 16 digits for Visa and MasterCard
+        if (trimmedCardNumber.length === 16) {
+          cardNumberInput.style.border = "2px solid green";
+          cardNumberInput.style.borderRadius = "0.2rem";
+        } else {
+          cardNumberInput.style.border = "2px solid red";
+          cardNumberInput.style.borderRadius = "0.2rem";
+        }
+      } else {
+        // If it's not Visa or MasterCard, don't change the border
+        cardNumberInput.style.border = "1px solid black"; // or any other desired style
+        cardNumberInput.style.borderRadius = "0.2rem";
+      }
     }
 
-    if (selectedValue === "visa" || selectedValue === "mastercard") {
-      // Check for 16 digits for Visa and MasterCard
-      if (trimmedCardNumber.length === 16) {
-        cardNumberInput.style.border = "2px solid green";
-      } else {
-        cardNumberInput.style.border = "2px solid red";
-      }
-    } else {
-      // If it's not Visa or MasterCard, don't change the border
-      cardNumberInput.style.border = "initial"; // or any other desired style
+    if (
+      selectedValue === "cashondelivery" || // Skip validation for cash on delivery
+      (cardNumberInput.style.border === "2px solid green" &&
+        deliveryAddress.style.border === "2px solid green")
+    ) {
+      checkoutOverlay.classList.add("show");
     }
   });
 }
@@ -379,3 +421,10 @@ function initMap() {
     });
   }
 }
+
+// Redirect Back To Main Page After Payment
+const redirectMain = document.getElementById("redirect-main");
+
+redirectMain.addEventListener("click", function () {
+  window.location.href = "index.html";
+});
