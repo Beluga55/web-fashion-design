@@ -1,3 +1,4 @@
+// Refactored
 const buttons = document.querySelectorAll(".button");
 const allItems = document.querySelectorAll(
   ".coat__div, .tie__div, .trousers__div"
@@ -5,43 +6,17 @@ const allItems = document.querySelectorAll(
 
 buttons.forEach((button) => {
   button.addEventListener("click", () => {
-    buttons.forEach((btn) => {
-      btn.classList.remove("active__button");
-    });
+    // Remove "active__button" class from all buttons
+    buttons.forEach((btn) => btn.classList.remove("active__button"));
 
     button.classList.add("active__button");
 
     const filter = button.getAttribute("data-filter");
     allItems.forEach((item) => {
-      if (filter === "all") {
+      const itemClassList = item.classList;
+
+      if (filter === "all" || itemClassList.contains(filter + "__div")) {
         item.style.display = "block";
-      } else if (filter === "coat") {
-        if (
-          item.classList.contains("tie__div") ||
-          item.classList.contains("trousers__div")
-        ) {
-          item.style.display = "none";
-        } else {
-          item.style.display = "block";
-        }
-      } else if (filter === "tie") {
-        if (
-          item.classList.contains("coat__div") ||
-          item.classList.contains("trousers__div")
-        ) {
-          item.style.display = "none";
-        } else {
-          item.style.display = "block";
-        }
-      } else if (filter === "trousers") {
-        if (
-          item.classList.contains("tie__div") ||
-          item.classList.contains("coat__div")
-        ) {
-          item.style.display = "none";
-        } else {
-          item.style.display = "block";
-        }
       } else {
         item.style.display = "none";
       }

@@ -1,4 +1,4 @@
-/*=============== NEWSLETTER VALIDATION, LOGIN, AND SIGNUP =============== */
+// Refactored
 const newsletterButton = document.getElementById("submit");
 const newsletterName = document.getElementById("name");
 const newsletterEmail = document.getElementById("email");
@@ -11,32 +11,35 @@ const mainPageButton = document.getElementById("main-page");
 function validateNewsletter(e) {
   e.preventDefault();
 
-  // Get the values from the input fields
   const nameValue = newsletterName.value;
   const emailValue = newsletterEmail.value;
 
-  // Clear any existing error messages
-  nameError.classList.remove("show");
-  emailError.classList.remove("show");
+  clearErrorMessages();
 
   if (nameValue === "") {
     nameError.classList.add("show");
   } else if (emailValue === "") {
     emailError.classList.add("show");
   } else {
-    // Clear the input fields
-    newsletterName.value = "";
-    newsletterEmail.value = "";
-    textArea.value = "";
+    clearInputFields();
     overlayShow.classList.add("show");
   }
 }
 
-newsletterButton.addEventListener("click", validateNewsletter);
-
-function backMainMenu() {
-  overlayShow.classList.remove("show");
-  window.location.href = "index.html";
+function clearErrorMessages() {
+  nameError.classList.remove("show");
+  emailError.classList.remove("show");
 }
 
-mainPageButton.addEventListener("click", backMainMenu);
+function clearInputFields() {
+  newsletterName.value = "";
+  newsletterEmail.value = "";
+  textArea.value = "";
+}
+
+newsletterButton.addEventListener("click", validateNewsletter);
+
+mainPageButton.addEventListener("click", () => {
+  overlayShow.classList.remove("show");
+  window.location.href = "index.html";
+});

@@ -1,4 +1,4 @@
-// Login
+// Refactored
 const loginEmailError = document.querySelector(".email-error");
 const loginPasswordError = document.querySelector(".password-error");
 const loginButton = document.querySelector(".login-submit");
@@ -10,30 +10,35 @@ const loginButtonRedirect = document.getElementById("login-button");
 function validateLogin(e) {
   e.preventDefault();
 
-  // Get the values from the input fields
   const emailLoginValue = loginInput.value;
   const passwordLoginValue = loginPasswordInput.value;
 
-  // Clear any existing error messages
-  loginEmailError.classList.remove("show");
-  loginPasswordError.classList.remove("show");
+  clearErrorMessages();
 
   if (emailLoginValue === "") {
     loginEmailError.classList.add("show");
   } else if (passwordLoginValue === "") {
     loginPasswordError.classList.add("show");
   } else {
-    // Clear the input fields
-    loginInput.value = "";
-    loginPasswordInput.value = "";
+    clearInputFields();
     loginOverlay.classList.add("show");
   }
 }
-loginButton.addEventListener("click", validateLogin);
+
+function clearErrorMessages() {
+  loginEmailError.classList.remove("show");
+  loginPasswordError.classList.remove("show");
+}
+
+function clearInputFields() {
+  loginInput.value = "";
+  loginPasswordInput.value = "";
+}
 
 function redirectProduct() {
   loginOverlay.classList.remove("show");
   window.location.href = "../products.html";
 }
 
+loginButton.addEventListener("click", validateLogin);
 loginButtonRedirect.addEventListener("click", redirectProduct);
