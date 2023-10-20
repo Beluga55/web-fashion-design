@@ -1,0 +1,92 @@
+body.dark-theme,
+.dark-theme .add__cart-overlay,
+.dark-theme .arrow__border {
+  background-color: hsl(228, 12%, 8%);
+}
+
+.dark-theme p,
+.dark-theme a,
+.dark-theme i,
+.dark-theme h2,
+.dark-theme h3,
+.dark-theme h4,
+.dark-theme span,
+.dark-theme label,
+.dark-theme button,
+.dark-theme .login__form > div:last-child a {
+  color: var(--White);
+}
+
+.dark-theme .bx-chevron-right,
+.dark-theme .bx-chevron-left,
+.dark-theme .about__content a,
+.dark-theme #read-more,
+.dark-theme .hero__quotes a,
+.dark-theme .hero__quotes i,
+.dark-theme .increment-button,
+.dark-theme .decrement-button,
+.dark-theme .checkout__overlay-container h2,
+.dark-theme .checkout__overlay-container p,
+.dark-theme #redirect-main {
+  color: var(--Black);
+}
+
+.dark-theme .scroll-header {
+  background: hsl(228, 12%, 8%);
+  box-shadow: 0 1px 4px hsla(240, 6%, 91%, 0.3);
+}
+
+.dark-theme .trending__button,
+.dark-theme .newsletter__form > form > input[type="submit"] {
+  background: var(--White);
+  color: var(--Black);
+}
+
+.dark-theme .trending__button:hover,
+.dark-theme .newsletter__form > form > input[type="submit"]:hover {
+  background: var(--DarkGold);
+  color: var(--White);
+}
+
+.dark-theme input[type="text"],
+.dark-theme input[type="email"],
+.dark-theme textarea,
+.dark-theme input[type="password"] {
+  background: transparent;
+  border: 2px solid rgb(167, 166, 166);
+  color: var(--White);
+  outline: none;
+}
+
+.dark-theme .hero__quotes h1,
+.dark-theme .faq {
+  background: transparent;
+  border: 1px solid var(--White);
+  color: var(--White);
+}
+
+.dark-theme .login__form,
+.dark-theme .signup__form,
+.dark-theme .color > div.active__color,
+.dark-theme .cart__slides,
+.dark-theme .cart__content,
+.dark-theme .checkout__content > div:first-child,
+.dark-theme .pay__now-btn,
+.dark-theme .testimonials__card,
+.dark-theme .trending__card,
+.dark-theme .newsletter__form-wrapper > div > input[type="text"],
+.dark-theme .newsletter__form-wrapper > div > input[type="email"],
+.dark-theme .newsletter__form-wrapper > div > textarea {
+  border: 2px solid var(--White);
+}
+
+.dark-theme .fa-star,
+.dark-theme .fa-star-half {
+  color: var(--DarkGold);
+}
+
+.dark-theme /* Apply these styles to the Autocomplete input field */
+.pac-container {
+  background-color: #333; /* Set the background color to a dark color */
+  color: #fff; /* Set the text color to white or a contrasting color */
+}

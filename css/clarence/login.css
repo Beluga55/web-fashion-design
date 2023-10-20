@@ -70,10 +70,9 @@
   font-family: var(--Raleway);
   font-size: 12px;
   padding: 0.75rem 1rem;
-  border: 2px solid var(--Dark);
+  border: 2px solid Grey;
   border-radius: 0.2rem;
   outline: none;
-  background: var(--White);
   width: 280px;
   color: var(--Black);
 }
@@ -88,7 +87,8 @@
   font-family: var(--Raleway);
   font-weight: var(--Raleway500);
   font-size: 12px;
-  transition: box-shadow 0.3s ease-in-out, color 0.3s ease-in-out, background 0.3s ease-in-out;
+  transition: box-shadow 0.3s ease-in-out, color 0.3s ease-in-out,
+    background 0.3s ease-in-out;
   background: var(--Dark);
   color: var(--White);
 }
