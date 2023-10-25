@@ -90,3 +90,18 @@ body.dark-theme,
   background-color: #333; /* Set the background color to a dark color */
   color: #fff; /* Set the text color to white or a contrasting color */
 }
+
+@media screen and (min-width: 576px) {
+  .dark-theme .hero__quotes > div i,
+  .dark-theme .hero__quotes > div a {
+    color: var(--White);
+  }
+
+  .dark-theme .add__cart-overlay {
+    background: rgba(45, 45, 45, 0.5);
+  }
+
+  .dark-theme .add__cart-overlay > div {
+    background: hsl(228, 12%, 8%);
+  }
+}
